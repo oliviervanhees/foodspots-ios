@@ -52,8 +52,15 @@ class F4FLocationViewController: UIViewController, UITableViewDelegate, UITableV
         } else {
             println("Could not fetch \(error), \(error!.userInfo)")
         }
+        
+        // Become active after suspended
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshViews", name: UIApplicationWillEnterForegroundNotification, object:nil)
+
     }
     
+    func refreshViews() {
+        tableView.reloadData()
+    }
     // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
