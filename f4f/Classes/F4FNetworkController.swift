@@ -23,7 +23,7 @@ class F4FNetworkController {
             "Authorization": "\(FBSDKAccessToken.currentAccessToken().tokenString)",
         ]
         
-        Alamofire.request(.POST, "http://83.82.6.86:3000/api/location/create", headers: headers, parameters: parameters)
+        Alamofire.request(.POST, "http://friends4food.com:3000/api/location/create", headers: headers, parameters: parameters)
         .responseJSON { request, response, data, error in
             if(error != nil) {
                 NSLog("Networking Error: \(error)")
