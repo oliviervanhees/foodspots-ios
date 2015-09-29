@@ -27,9 +27,9 @@ class F4FNetworkController {
         .responseJSON { request, response, result in
             switch (result) {
             case .Success(_):
-                print("ok")
+                break
             case .Failure(_, let error):
-                print(error)
+                print("Network error: \(error)")
             }
         }
     }
