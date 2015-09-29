@@ -16,7 +16,7 @@ class F4FLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         super.viewDidLoad()
 
         // Setup Facebook Login button
-        var loginButton = FBSDKLoginButton()
+        let loginButton = FBSDKLoginButton()
         loginButton.readPermissions = ["public_profile", "email", "user_friends"]
         loginButton.center = self.view.center
         loginButton.delegate = self
@@ -31,11 +31,11 @@ class F4FLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             // Logged in successfuly
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            var vc =  storyboard.instantiateInitialViewController() as! UIViewController
+            let vc =  storyboard.instantiateInitialViewController() as UIViewController!
             appDelegate.window?.rootViewController = vc;
             appDelegate.window?.makeKeyAndVisible()
         } else {
-            println(error.localizedDescription)
+            print(error.localizedDescription)
         }
     }
     

@@ -4,101 +4,75 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-AFNetworking.xcscheme</key>
+		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
-		<key>Pods-Alamofire.xcscheme</key>
+		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
-		<key>Pods-Bolts.xcscheme</key>
+		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
 		</dict>
-		<key>Pods-FBSDKCoreKit.xcscheme</key>
+		<key>FBSDKLoginKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
-		<key>Pods-FBSDKLoginKit.xcscheme</key>
+		<key>FBSDKShareKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
-		</dict>
-		<key>Pods-FBSDKShareKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
-		</dict>
-		<key>Pods-SwiftyJSON.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>7</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>0</integer>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0CCEB0936F450FBA38D08F41</key>
+		<key>253A32CA362F436B6AF9E2281D88D537</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>454119F4A4893CF9B274E20A</key>
+		<key>6B263653ADDC62711B331C895B6797E5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>54FBC71409967F6E31B4053F</key>
+		<key>93090ADB0E21B08FE3D510AF9198F713</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>560A08D3EE25A26B4AC125D4</key>
+		<key>A645AB224994379B10138F413B2A4035</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7A221D3832C5D066FF3E6B9E</key>
+		<key>AD768173B4CE72269EB806BCAD8B900D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A77B1F709E269B824FB302B6</key>
+		<key>B9A04D3C9B208813656510FDA8ADAE02</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DCD877C1C3BA9EF278E898B6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EDB879C5F59246904208BDC0</key>
+		<key>D4ADAEA2D956EFFA5BFC70AFC9AF8F37</key>
 		<dict>
 			<key>primary</key>
 			<true/>

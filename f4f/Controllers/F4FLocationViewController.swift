@@ -40,17 +40,12 @@ class F4FLocationViewController: UIViewController, UITableViewDelegate, UITableV
         
         let fetchRequest = NSFetchRequest(entityName:"LocationUpdate")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
-
-        var error: NSError?
         
-        let fetchedResults =
-        moc.executeFetchRequest(fetchRequest,
-            error: &error) as? [NSManagedObject]
-        
-        if let results = fetchedResults as? [LocationUpdate]{
-            locationUpdates = results
-        } else {
-            println("Could not fetch \(error), \(error!.userInfo)")
+        do{
+            let fetchedResults = try moc.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            locationUpdates = fetchedResults as! [LocationUpdate]
+        } catch let error as NSError {
+            print("Fetch failed: \(error.localizedDescription)")
         }
         
         // Become active after suspended
@@ -72,7 +67,7 @@ class F4FLocationViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
         
         let locationUpdate:LocationUpdate = locationUpdates[indexPath.row]
                 
@@ -83,7 +78,7 @@ class F4FLocationViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: - Location Manager
     
-    func locationManager(manager: CLLocationManager!,
+    func locationManager(manager: CLLocationManager,
         didChangeAuthorizationStatus status: CLAuthorizationStatus)
     {
         setupLocationManager()
@@ -118,9 +113,9 @@ class F4FLocationViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         locationManager.stopUpdatingLocation()
-        print("LocationManager failed: \(error)")
+        print("LocationManager failed: \(error)", terminator: "")
         
         let alertController = UIAlertController(
             title: "Location Unavailable",
@@ -138,11 +133,11 @@ class F4FLocationViewController: UIViewController, UITableViewDelegate, UITableV
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        var locationArray = locations as NSArray
-        var locationObj = locationArray.lastObject as! CLLocation
-        var coord = locationObj.coordinate
+        let locationArray = locations as NSArray
+        let locationObj = locationArray.lastObject as! CLLocation
+        let coord = locationObj.coordinate
         
         let loc : LocationUpdate = LocationUpdate(context: moc)
         loc.date = NSDate()
@@ -150,35 +145,39 @@ class F4FLocationViewController: UIViewController, UITableViewDelegate, UITableV
         loc.latitude = coord.latitude
         
         var error: NSError?
-        if !moc.save(&error) {
-            println("Could not save \(error), \(error?.userInfo)")
+        do {
+            try moc.save()
+        } catch let error1 as NSError {
+            error = error1
+            print("Could not save \(error), \(error?.userInfo)")
         }
         
         // network
         F4FNetworkController.sendLocationUpdate(loc)
         
         if(locationUpdates.count >= locationUpdatesLimit){
-            let request = NSFetchRequest(entityName: "LocationUpdate")
-            request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
-            request.fetchLimit = 1
+            let fetchRequest = NSFetchRequest(entityName: "LocationUpdate")
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
+            fetchRequest.fetchLimit = 1
             
-            var error: NSError?
-            let fetchedResults =
-            moc.executeFetchRequest(request,
-                error: &error) as? [NSManagedObject]
-            
-            if let results = fetchedResults {
-                let x = results[0] as! LocationUpdate
+            do{
+                let fetchedResults = try moc.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+                let results = fetchedResults as! [LocationUpdate]
+                
+                let x = results[0]
                 
                 moc.deleteObject(x)
                 var error: NSError?
-                if !moc.save(&error) {
-                    println("Could not save \(error), \(error?.userInfo)")
+                do {
+                    try moc.save()
+                } catch let error1 as NSError {
+                    error = error1
+                    print("Could not save \(error), \(error?.userInfo)")
                 }
                 
                 locationUpdates.removeLast()
-            } else {
-                println("Could not fetch \(error), \(error!.userInfo)")
+            } catch let error as NSError {
+                print("Fetch failed: \(error.localizedDescription)")
             }
         }
         
@@ -188,7 +187,7 @@ class F4FLocationViewController: UIViewController, UITableViewDelegate, UITableV
         if UIApplication.sharedApplication().applicationState == .Active {
             tableView.reloadData()
         } else {
-            println("background update")
+            print("background update")
         }
     }
     
@@ -205,23 +204,30 @@ class F4FLocationViewController: UIViewController, UITableViewDelegate, UITableV
     // Delete all objects
     @IBAction func TrashTapped(sender: UIBarButtonItem) {
         // fetch all
-        let request = NSFetchRequest(entityName: "LocationUpdate")
+        let fetchRequest = NSFetchRequest(entityName: "LocationUpdate")
         
-        var error: NSError?
-        if let results = moc.executeFetchRequest(request, error: &error) as? [NSManagedObject] {
+        do{
+            let fetchedResults = try moc.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            let results = fetchedResults as! [LocationUpdate]
             
             for locationUpdate in results {
                 moc.deleteObject(locationUpdate)
             }
             
-            var error: NSError?
-            if !moc.save(&error) {
-                println("Could not save \(error), \(error?.userInfo)")
+            do {
+                try moc.save()
+            } catch let error as NSError {
+                print("Could not save \(error), \(error.userInfo)")
             }
             
             locationUpdates.removeAll(keepCapacity: false)
             tableView.reloadData()
+
+        } catch let error as NSError {
+            print("Fetch failed: \(error.localizedDescription)")
         }
+        
+        
     }
     
 }

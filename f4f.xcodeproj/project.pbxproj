@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7799BF51E1C099239013A33D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9670A2523637C99FF452EECD /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8E43D61301B978E5CB08CF7C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9670A2523637C99FF452EECD /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		961454211B906E9D00DC8737 /* F4FSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961454201B906E9D00DC8737 /* F4FSettingsViewController.swift */; };
 		96AD88571B91ED2500CCCB82 /* F4FNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD88561B91ED2500CCCB82 /* F4FNetworkController.swift */; };
 		96BBABD11B8E1DE600568D97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BBABD01B8E1DE600568D97 /* AppDelegate.swift */; };
@@ -69,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7799BF51E1C099239013A33D /* Pods.framework in Frameworks */,
+				8E43D61301B978E5CB08CF7C /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +256,7 @@
 		96BBABC31B8E1DE600568D97 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Nubis;
 				TargetAttributes = {
@@ -342,7 +343,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "
+";
 			showEnvVarsInLog = 0;
 		};
 		4562E37D67F4F09D7CC28816 /* Copy Pods Resources */ = {
@@ -357,7 +359,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

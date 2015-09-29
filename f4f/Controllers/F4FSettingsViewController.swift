@@ -31,7 +31,7 @@ class F4FSettingsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
         
         cell.textLabel!.text = "Log out"
         
@@ -39,7 +39,7 @@ class F4FSettingsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("tapped")
+        print("tapped")
         
         let loginManager = FBSDKLoginManager()
         loginManager.logOut()
