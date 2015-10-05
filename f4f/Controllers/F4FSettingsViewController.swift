@@ -11,7 +11,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 class F4FSettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-
+    
     @IBOutlet
     var tableView: UITableView!
     
@@ -31,7 +31,7 @@ class F4FSettingsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         
         cell.textLabel!.text = "Log out"
         
@@ -39,14 +39,16 @@ class F4FSettingsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("tapped")
+        // Stop monitoring location
+        F4FLocationManager.sharedInstance.stop()
         
+        // Log out Facebook
         let loginManager = FBSDKLoginManager()
         loginManager.logOut()
         
+        // Show the LoginViewController
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.showRootViewController()
-
     }
-
+    
 }

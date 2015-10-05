@@ -16,21 +16,23 @@ class F4FNetworkController {
     
     class func sendLocationUpdate(locationUpdate: LocationUpdate){
         
-        let parameters = ["latitude": locationUpdate.latitude, "longitude": locationUpdate.longitude]
-        //var parameters = ["latitude": 51.639968, "longitude": 4.864036]
-
+        let parameters = [
+            "latitude": locationUpdate.latitude,
+            "longitude": locationUpdate.longitude
+        ]
+        
         let headers = [
             "Authorization": "\(FBSDKAccessToken.currentAccessToken().tokenString)",
         ]
         
         Alamofire.request(.POST, "http://friends4food.com/api/location/create", headers: headers, parameters: parameters)
-        .responseJSON { request, response, result in
-            switch (result) {
-            case .Success(_):
-                break
-            case .Failure(_, let error):
-                print("Network error: \(error)")
-            }
+            .responseJSON { request, response, result in
+                switch (result) {
+                case .Success(_):
+                    break
+                case .Failure(_, let error):
+                    print("Network error: \(error)")
+                }
         }
     }
 }

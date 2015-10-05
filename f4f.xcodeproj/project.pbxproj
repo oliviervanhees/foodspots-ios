@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8E43D61301B978E5CB08CF7C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9670A2523637C99FF452EECD /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		961454211B906E9D00DC8737 /* F4FSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961454201B906E9D00DC8737 /* F4FSettingsViewController.swift */; };
+		963DECFD1BBC606A00611FA5 /* F4FLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963DECFC1BBC606A00611FA5 /* F4FLocationManager.swift */; settings = {ASSET_TAGS = (); }; };
 		96AD88571B91ED2500CCCB82 /* F4FNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD88561B91ED2500CCCB82 /* F4FNetworkController.swift */; };
 		96BBABD11B8E1DE600568D97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BBABD01B8E1DE600568D97 /* AppDelegate.swift */; };
 		96BBABD61B8E1DE600568D97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96BBABD41B8E1DE600568D97 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		0E34247FB29D931D0CC79E02 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		52957F395A6045193F85009E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		961454201B906E9D00DC8737 /* F4FSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = F4FSettingsViewController.swift; path = Controllers/F4FSettingsViewController.swift; sourceTree = "<group>"; };
+		963DECFC1BBC606A00611FA5 /* F4FLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = F4FLocationManager.swift; path = Classes/F4FLocationManager.swift; sourceTree = "<group>"; };
 		9670A2523637C99FF452EECD /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96AD88561B91ED2500CCCB82 /* F4FNetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = F4FNetworkController.swift; path = Classes/F4FNetworkController.swift; sourceTree = "<group>"; };
 		96BBABCB1B8E1DE600568D97 /* tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				96AD88561B91ED2500CCCB82 /* F4FNetworkController.swift */,
+				963DECFC1BBC606A00611FA5 /* F4FLocationManager.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				96E6F3421B8EF46B00097D5E /* F4FLoginViewController.swift in Sources */,
 				96E6F35F1B8F5A0700097D5E /* LocationUpdate.swift in Sources */,
 				96E6F3591B8F0B2B00097D5E /* F4FLocationViewController.swift in Sources */,
+				963DECFD1BBC606A00611FA5 /* F4FLocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

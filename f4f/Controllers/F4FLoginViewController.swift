@@ -11,10 +11,10 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 class F4FLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Setup Facebook Login button
         let loginButton = FBSDKLoginButton()
         loginButton.readPermissions = ["public_profile", "email", "user_friends"]
@@ -22,7 +22,7 @@ class F4FLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         loginButton.delegate = self
         self.view.addSubview(loginButton)
     }
-
+    
     // MARK - Facebook Button
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!)
@@ -42,6 +42,4 @@ class F4FLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!)
     {
     }
-    
 }
-

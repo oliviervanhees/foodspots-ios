@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -61,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     lazy var applicationDocumentsDirectory: NSURL = {
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        return urls[urls.count-1] 
+        return urls[urls.count-1]
         }()
     
     lazy var managedObjectModel: NSManagedObjectModel = {
@@ -113,15 +112,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func saveContext () {
         if let moc = self.managedObjectContext {
-            var error: NSError? = nil
             if moc.hasChanges {
                 do {
                     try moc.save()
-                } catch let error1 as NSError {
-                    error = error1
+                } catch let error as NSError {
                     // Replace this implementation with code to handle the error appropriately.
                     // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                    NSLog("Unresolved error \(error), \(error!.userInfo)")
+                    NSLog("Unresolved error \(error), \(error.userInfo)")
                     abort()
                 }
             }
@@ -140,15 +137,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func showRootViewController(){
         // Facebook logged in
         if (FBSDKAccessToken.currentAccessToken() == nil){
-            print("not logged in ")
-            
+            // Not logged in
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc =  storyboard.instantiateViewControllerWithIdentifier("LoginViewController")
             self.window?.rootViewController = vc;
             self.window?.makeKeyAndVisible()
         } else {
-            print("logged in ")
-            
+            // Logged in
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc =  storyboard.instantiateInitialViewController() as UIViewController!
             self.window?.rootViewController = vc;
@@ -156,4 +151,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 }
-
