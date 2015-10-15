@@ -45,7 +45,7 @@
 		963DECFC1BBC606A00611FA5 /* F4FLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = F4FLocationManager.swift; path = Classes/F4FLocationManager.swift; sourceTree = "<group>"; };
 		9670A2523637C99FF452EECD /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96AD88561B91ED2500CCCB82 /* F4FNetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = F4FNetworkController.swift; path = Classes/F4FNetworkController.swift; sourceTree = "<group>"; };
-		96BBABCB1B8E1DE600568D97 /* tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		96BBABCB1B8E1DE600568D97 /* FoodSpots.me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodSpots.me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BBABCF1B8E1DE600568D97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96BBABD01B8E1DE600568D97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96BBABD51B8E1DE600568D97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 		96BBABCC1B8E1DE600568D97 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				96BBABCB1B8E1DE600568D97 /* tracker.app */,
+				96BBABCB1B8E1DE600568D97 /* FoodSpots.me.app */,
 				96BBABE01B8E1DE600568D97 /* f4fTests.xctest */,
 			);
 			name = Products;
@@ -232,7 +232,7 @@
 			);
 			name = f4f;
 			productName = f4f;
-			productReference = 96BBABCB1B8E1DE600568D97 /* tracker.app */;
+			productReference = 96BBABCB1B8E1DE600568D97 /* FoodSpots.me.app */;
 			productType = "com.apple.product-type.application";
 		};
 		96BBABDF1B8E1DE600568D97 /* f4fTests */ = {
@@ -512,7 +512,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = f4f/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = tracker;
+				PRODUCT_NAME = FoodSpots.me;
 			};
 			name = Debug;
 		};
@@ -524,7 +524,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = f4f/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = tracker;
+				PRODUCT_NAME = FoodSpots.me;
 			};
 			name = Release;
 		};

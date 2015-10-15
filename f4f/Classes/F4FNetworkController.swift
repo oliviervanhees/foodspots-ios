@@ -25,7 +25,7 @@ class F4FNetworkController {
             "Authorization": "\(FBSDKAccessToken.currentAccessToken().tokenString)",
         ]
         
-        Alamofire.request(.POST, "http://friends4food.com/api/location/create", headers: headers, parameters: parameters)
+        Alamofire.request(.POST, "https://foodspots.me/api/location/create", headers: headers, parameters: parameters)
             .responseJSON { request, response, result in
                 switch (result) {
                 case .Success(_):
