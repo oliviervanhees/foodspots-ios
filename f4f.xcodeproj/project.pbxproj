@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8E43D61301B978E5CB08CF7C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9670A2523637C99FF452EECD /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		961454211B906E9D00DC8737 /* F4FSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961454201B906E9D00DC8737 /* F4FSettingsViewController.swift */; };
-		963DECFD1BBC606A00611FA5 /* F4FLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963DECFC1BBC606A00611FA5 /* F4FLocationManager.swift */; settings = {ASSET_TAGS = (); }; };
+		963DECFD1BBC606A00611FA5 /* F4FLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963DECFC1BBC606A00611FA5 /* F4FLocationManager.swift */; };
 		96AD88571B91ED2500CCCB82 /* F4FNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD88561B91ED2500CCCB82 /* F4FNetworkController.swift */; };
 		96BBABD11B8E1DE600568D97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BBABD01B8E1DE600568D97 /* AppDelegate.swift */; };
 		96BBABD61B8E1DE600568D97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96BBABD41B8E1DE600568D97 /* Main.storyboard */; };
@@ -26,6 +26,13 @@
 		96E6F3591B8F0B2B00097D5E /* F4FLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E6F3581B8F0B2B00097D5E /* F4FLocationViewController.swift */; };
 		96E6F35D1B8F4A5E00097D5E /* F4F.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96E6F35B1B8F4A5E00097D5E /* F4F.xcdatamodeld */; };
 		96E6F35F1B8F5A0700097D5E /* LocationUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E6F35E1B8F5A0700097D5E /* LocationUpdate.swift */; };
+		96F654261C12DFD700152F2E /* F4FMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F654251C12DFD700152F2E /* F4FMapViewController.swift */; };
+		96F654281C12E50100152F2E /* F4FFoodSpotsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F654271C12E50100152F2E /* F4FFoodSpotsTableViewController.swift */; };
+		96F6542B1C12E76800152F2E /* Restaurant@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96F654291C12E76800152F2E /* Restaurant@3x.png */; };
+		96F6542C1C12E76800152F2E /* Restaurant@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96F6542A1C12E76800152F2E /* Restaurant@2x.png */; };
+		96F654301C13006500152F2E /* F4FFoodSpotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F6542E1C13006500152F2E /* F4FFoodSpotTableViewCell.swift */; };
+		96F654311C13006500152F2E /* F4FFoodSpotTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96F6542F1C13006500152F2E /* F4FFoodSpotTableViewCell.xib */; };
+		96F654331C13106600152F2E /* F4FFoodSpotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F654321C13106600152F2E /* F4FFoodSpotViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +71,13 @@
 		96E6F3581B8F0B2B00097D5E /* F4FLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = F4FLocationViewController.swift; path = Controllers/F4FLocationViewController.swift; sourceTree = "<group>"; };
 		96E6F35C1B8F4A5E00097D5E /* F4F.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = F4F.xcdatamodel; sourceTree = "<group>"; };
 		96E6F35E1B8F5A0700097D5E /* LocationUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationUpdate.swift; path = Model/LocationUpdate.swift; sourceTree = "<group>"; };
+		96F654251C12DFD700152F2E /* F4FMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = F4FMapViewController.swift; path = Controllers/F4FMapViewController.swift; sourceTree = "<group>"; };
+		96F654271C12E50100152F2E /* F4FFoodSpotsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = F4FFoodSpotsTableViewController.swift; path = Controllers/F4FFoodSpotsTableViewController.swift; sourceTree = "<group>"; };
+		96F654291C12E76800152F2E /* Restaurant@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Restaurant@3x.png"; path = "Resources/Icons/Restaurant@3x.png"; sourceTree = "<group>"; };
+		96F6542A1C12E76800152F2E /* Restaurant@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Restaurant@2x.png"; path = "Resources/Icons/Restaurant@2x.png"; sourceTree = "<group>"; };
+		96F6542E1C13006500152F2E /* F4FFoodSpotTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = F4FFoodSpotTableViewCell.swift; path = Controllers/TableViewCells/F4FFoodSpotTableViewCell.swift; sourceTree = "<group>"; };
+		96F6542F1C13006500152F2E /* F4FFoodSpotTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = F4FFoodSpotTableViewCell.xib; path = Controllers/TableViewCells/F4FFoodSpotTableViewCell.xib; sourceTree = "<group>"; };
+		96F654321C13106600152F2E /* F4FFoodSpotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = F4FFoodSpotViewController.swift; path = Controllers/F4FFoodSpotViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,9 +180,13 @@
 		96E6F3401B8EF43200097D5E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				96F6542D1C13002F00152F2E /* TableViewCells */,
 				96E6F3411B8EF46B00097D5E /* F4FLoginViewController.swift */,
 				96E6F3581B8F0B2B00097D5E /* F4FLocationViewController.swift */,
 				961454201B906E9D00DC8737 /* F4FSettingsViewController.swift */,
+				96F654251C12DFD700152F2E /* F4FMapViewController.swift */,
+				96F654271C12E50100152F2E /* F4FFoodSpotsTableViewController.swift */,
+				96F654321C13106600152F2E /* F4FFoodSpotViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -184,6 +202,8 @@
 		96E6F3451B8EF61B00097D5E /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				96F654291C12E76800152F2E /* Restaurant@3x.png */,
+				96F6542A1C12E76800152F2E /* Restaurant@2x.png */,
 				96E6F3541B8EFCA400097D5E /* Settings@3x.png */,
 				96E6F3551B8EFCA400097D5E /* Settings@2x.png */,
 				96E6F34C1B8EF87E00097D5E /* Pin@3x.png */,
@@ -201,6 +221,15 @@
 				96E6F35E1B8F5A0700097D5E /* LocationUpdate.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		96F6542D1C13002F00152F2E /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				96F6542E1C13006500152F2E /* F4FFoodSpotTableViewCell.swift */,
+				96F6542F1C13006500152F2E /* F4FFoodSpotTableViewCell.xib */,
+			);
+			name = TableViewCells;
 			sourceTree = "<group>";
 		};
 		BA696B76FE17EDF4A63F873E /* Pods */ = {
@@ -260,7 +289,8 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
-				LastUpgradeCheck = 0640;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Nubis;
 				TargetAttributes = {
 					96BBABCA1B8E1DE600568D97 = {
@@ -301,10 +331,13 @@
 				96BBABD61B8E1DE600568D97 /* Main.storyboard in Resources */,
 				96BBABDB1B8E1DE600568D97 /* LaunchScreen.xib in Resources */,
 				96E6F3531B8EF87E00097D5E /* Location@2x.png in Resources */,
+				96F6542C1C12E76800152F2E /* Restaurant@2x.png in Resources */,
 				96BBABD81B8E1DE600568D97 /* Images.xcassets in Resources */,
 				96E6F3511B8EF87E00097D5E /* Pin@2x.png in Resources */,
 				96E6F3561B8EFCA400097D5E /* Settings@3x.png in Resources */,
 				96E6F3571B8EFCA400097D5E /* Settings@2x.png in Resources */,
+				96F6542B1C12E76800152F2E /* Restaurant@3x.png in Resources */,
+				96F654311C13006500152F2E /* F4FFoodSpotTableViewCell.xib in Resources */,
 				96E6F3501B8EF87E00097D5E /* Pin@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,12 +406,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				961454211B906E9D00DC8737 /* F4FSettingsViewController.swift in Sources */,
+				96F654261C12DFD700152F2E /* F4FMapViewController.swift in Sources */,
 				96E6F35D1B8F4A5E00097D5E /* F4F.xcdatamodeld in Sources */,
 				96AD88571B91ED2500CCCB82 /* F4FNetworkController.swift in Sources */,
 				96BBABD11B8E1DE600568D97 /* AppDelegate.swift in Sources */,
 				96E6F3421B8EF46B00097D5E /* F4FLoginViewController.swift in Sources */,
 				96E6F35F1B8F5A0700097D5E /* LocationUpdate.swift in Sources */,
+				96F654331C13106600152F2E /* F4FFoodSpotViewController.swift in Sources */,
 				96E6F3591B8F0B2B00097D5E /* F4FLocationViewController.swift in Sources */,
+				96F654281C12E50100152F2E /* F4FFoodSpotsTableViewController.swift in Sources */,
+				96F654301C13006500152F2E /* F4FFoodSpotTableViewCell.swift in Sources */,
 				963DECFD1BBC606A00611FA5 /* F4FLocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,6 +480,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -544,6 +582,7 @@
 				);
 				INFOPLIST_FILE = f4fTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.friends4food.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/f4f.app/f4f";
 			};
@@ -559,6 +598,7 @@
 				);
 				INFOPLIST_FILE = f4fTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.friends4food.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/f4f.app/f4f";
 			};

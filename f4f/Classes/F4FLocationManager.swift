@@ -27,7 +27,7 @@ class F4FLocationManager: NSObject, CLLocationManagerDelegate{
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         
-        setupLocationManager(false);
+        //setupLocationManager(false);
     }
     
     func start(){
