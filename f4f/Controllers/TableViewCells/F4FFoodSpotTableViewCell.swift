@@ -51,14 +51,16 @@ class F4FFoodSpotTableViewCell: UITableViewCell {
     
     private func drawLiked(liked: Bool){
         let color = liked ? UIColor.init(red: 118/255, green: 193/255, blue: 144/255, alpha: 1.0) : UIColor.whiteColor()
-        let text = liked ? "Your FoodSpot" : "Like FoodSpot"
+        let text = liked ? "Navigate To FoodSpot" : "Like FoodSpot"
         
         buttonLike.backgroundColor = color
         buttonLike.setTitle(text, forState: .Normal)
     }
     
     @IBAction func tappedLikeButton(sender: AnyObject) {
-        drawLiked(!isLiked)
+        if(!isLiked){
+            drawLiked(!isLiked)
+        }
         
         if let del = delegate{
             del.likeTapped(self)

@@ -63,16 +63,27 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
     func likeTapped(cell: UITableViewCell) {
         if let indexPath = tableView.indexPathForCell(cell){
             let foodSpot = foodSpots[indexPath.row]
-            foodSpot.setLiked(!foodSpot.liked){ b in
-                if b {
-                    foodSpot.liked = !foodSpot.liked
-                    cell.setNeedsDisplay()
-                    self.tableView.reloadData()
+            
+            if(foodSpot.liked){
+                if var location = foodSpot.location{
+                    location = location.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+                    if let targetURL = NSURL(string: "http://maps.apple.com/maps?daddr=\(location)"){
+                        let isAvailable = UIApplication.sharedApplication().canOpenURL(targetURL)
+                        if isAvailable {
+                            UIApplication.sharedApplication().openURL(targetURL)
+                        }
+                    }
+                }
+            }else{
+                foodSpot.setLiked(!foodSpot.liked){ success in
+                    if success {
+                        foodSpot.liked = !foodSpot.liked
+                        cell.setNeedsDisplay()
+                        self.tableView.reloadData()
+                    }
                 }
             }
-
         }
-        
     }
     // MARK: - Navigation
     /*

@@ -14,6 +14,7 @@ class FoodSpot{
     var foodSpotID: String
     var name: String
     var imageURL: String?
+    var location: String?
     var distance: Double
     var latitude: Double?
     var longitude: Double?
@@ -21,10 +22,11 @@ class FoodSpot{
 
     var cachedImage: UIImage?
 
-    init(_foodSpotID: String, _name: String, _imageURL: String?, _distance: Double, _latitude: Double?, _longitude: Double?) {
+    init(_foodSpotID: String, _name: String, _imageURL: String?, _location: String?, _distance: Double, _latitude: Double?, _longitude: Double?) {
         foodSpotID = _foodSpotID
         name = _name
         imageURL = _imageURL
+        location = _location
         distance = _distance
         latitude = _latitude
         longitude = _longitude
@@ -34,13 +36,14 @@ class FoodSpot{
         let foodSpotID = String(obj["id"].intValue)
         let name = obj["name"].string ?? ""
         let imageURL = obj["external_image_url"].string?.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+        let location = obj["location"].string
         var distance = obj["distance"].doubleValue ?? 0.0
         distance *= 1.60934 // convert from miles to km
-        
+
         let latitude = obj["latitude"].doubleValue
         let longitude = obj["longitude"].doubleValue
         
-        return FoodSpot(_foodSpotID: foodSpotID, _name: name,_imageURL: imageURL,_distance: distance,_latitude: latitude,_longitude:longitude)
+        return FoodSpot(_foodSpotID: foodSpotID, _name: name,_imageURL: imageURL, _location: location, _distance: distance,_latitude: latitude,_longitude:longitude)
     }
     
     static func list(cb: ([FoodSpot]) -> Void) {
