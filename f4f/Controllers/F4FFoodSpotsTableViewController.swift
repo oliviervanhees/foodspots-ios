@@ -17,8 +17,12 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
         
         tableView.registerNib(UINib(nibName: "F4FFoodSpotTableViewCell", bundle: nil), forCellReuseIdentifier: "F4FFoodSpotTableViewCell")
      
+        tableView.separatorStyle = .None
+        tableView.backgroundColor = UIColor.init(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
+        
+        
         FoodSpot.list() { (result) -> Void in
-            self.foodSpots = result
+            self.foodSpots = result.filter(){ return $0.imageURL != nil }
             self.tableView.reloadData()
         }
     }

@@ -18,6 +18,7 @@ class F4FFoodSpotTableViewCell: UITableViewCell {
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelDistance: UILabel!
     @IBOutlet weak var buttonLike: UIButton!
+    @IBOutlet weak var viewMain: UIView!
     
     var delegate: FoodSpotCellLikeTappedDelegate?
     
@@ -31,6 +32,11 @@ class F4FFoodSpotTableViewCell: UITableViewCell {
         buttonLike.layer.borderWidth = 1
         buttonLike.layer.borderColor = UIColor.init(red: 27/255, green: 66/255, blue: 82/255, alpha: 1.0).CGColor
         
+        viewMain.layer.cornerRadius = 5
+        viewMain.layer.masksToBounds = true
+        viewMain.backgroundColor = UIColor.init(red: 11/255, green: 26/255, blue: 32/255, alpha: 0.1)
+        
+        layer.backgroundColor =  UIColor.clearColor().CGColor
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
