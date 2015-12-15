@@ -8,15 +8,19 @@
 
 import UIKit
 
-class F4FFoodSpotsTableViewController: UITableViewController {
+class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTappedDelegate {
     
-    let foodSpots = ["Cafe Proost","Restaurant X"]
+    var foodSpots:[FoodSpot] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.registerNib(UINib(nibName: "F4FFoodSpotTableViewCell", bundle: nil), forCellReuseIdentifier: "F4FFoodSpotTableViewCell")
-        
+     
+        FoodSpot.list() { (result) -> Void in
+            self.foodSpots = result
+            self.tableView.reloadData()
+        }
     }
     
     // MARK: - Table view data source
@@ -31,18 +35,43 @@ class F4FFoodSpotsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("F4FFoodSpotTableViewCell", forIndexPath: indexPath) as! F4FFoodSpotTableViewCell
+        cell.delegate = self
         
-        cell.textLabel?.text = foodSpots[indexPath.row]
+        let foodSpot = foodSpots[indexPath.row]
+        cell.labelName.text = foodSpot.name
+        let distance = String(format: "%.2f", foodSpot.distance)
+        cell.labelDistance.text = "Distance \(distance) km"
+        
+        foodSpot.image{ image -> Void in
+            cell.imageMain!.image = image
+            cell.imageMain!.clipsToBounds = true
+        }
+        
+        cell.isLiked = foodSpot.liked
+        cell.drawLiked()
         
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //performSegueWithIdentifier("SegueFoodSpot", sender: self)
     }
     
+    func likeTapped(cell: UITableViewCell) {
+        if let indexPath = tableView.indexPathForCell(cell){
+            let foodSpot = foodSpots[indexPath.row]
+            foodSpot.setLiked(!foodSpot.liked){ b in
+                if b {
+                    foodSpot.liked = !foodSpot.liked
+                    cell.setNeedsDisplay()
+                    self.tableView.reloadData()
+                }
+            }
+
+        }
+        
+    }
     // MARK: - Navigation
-    
+    /*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "SegueFoodSpot"){
             let viewController = segue.destinationViewController as! F4FFoodSpotViewController
@@ -50,5 +79,6 @@ class F4FFoodSpotsTableViewController: UITableViewController {
             viewController.title = foodSpots[selectedIndex.row]
         }
     }
+*/
     
 }

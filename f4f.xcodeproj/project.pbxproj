@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8E43D61301B978E5CB08CF7C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9670A2523637C99FF452EECD /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8E43D61301B978E5CB08CF7C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9670A2523637C99FF452EECD /* Pods.framework */; };
 		961454211B906E9D00DC8737 /* F4FSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961454201B906E9D00DC8737 /* F4FSettingsViewController.swift */; };
 		963DECFD1BBC606A00611FA5 /* F4FLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963DECFC1BBC606A00611FA5 /* F4FLocationManager.swift */; };
+		9698CC6D1C2008D0005C89A7 /* FoodSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9698CC6C1C2008D0005C89A7 /* FoodSpot.swift */; };
 		96AD88571B91ED2500CCCB82 /* F4FNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD88561B91ED2500CCCB82 /* F4FNetworkController.swift */; };
 		96BBABD11B8E1DE600568D97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BBABD01B8E1DE600568D97 /* AppDelegate.swift */; };
 		96BBABD61B8E1DE600568D97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96BBABD41B8E1DE600568D97 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		961454201B906E9D00DC8737 /* F4FSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = F4FSettingsViewController.swift; path = Controllers/F4FSettingsViewController.swift; sourceTree = "<group>"; };
 		963DECFC1BBC606A00611FA5 /* F4FLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = F4FLocationManager.swift; path = Classes/F4FLocationManager.swift; sourceTree = "<group>"; };
 		9670A2523637C99FF452EECD /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9698CC6C1C2008D0005C89A7 /* FoodSpot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodSpot.swift; path = Model/FoodSpot.swift; sourceTree = "<group>"; };
 		96AD88561B91ED2500CCCB82 /* F4FNetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = F4FNetworkController.swift; path = Classes/F4FNetworkController.swift; sourceTree = "<group>"; };
 		96BBABCB1B8E1DE600568D97 /* FoodSpots.me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodSpots.me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BBABCF1B8E1DE600568D97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			children = (
 				96E6F35B1B8F4A5E00097D5E /* F4F.xcdatamodeld */,
 				96E6F35E1B8F5A0700097D5E /* LocationUpdate.swift */,
+				9698CC6C1C2008D0005C89A7 /* FoodSpot.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -395,7 +398,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -412,6 +415,7 @@
 				96BBABD11B8E1DE600568D97 /* AppDelegate.swift in Sources */,
 				96E6F3421B8EF46B00097D5E /* F4FLoginViewController.swift in Sources */,
 				96E6F35F1B8F5A0700097D5E /* LocationUpdate.swift in Sources */,
+				9698CC6D1C2008D0005C89A7 /* FoodSpot.swift in Sources */,
 				96F654331C13106600152F2E /* F4FFoodSpotViewController.swift in Sources */,
 				96E6F3591B8F0B2B00097D5E /* F4FLocationViewController.swift in Sources */,
 				96F654281C12E50100152F2E /* F4FFoodSpotsTableViewController.swift in Sources */,

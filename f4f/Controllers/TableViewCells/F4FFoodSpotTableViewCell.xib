@@ -3,45 +3,82 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="F4FFoodSpotTableViewCell" textLabel="1Ij-cU-pmS" detailTextLabel="CaP-Pu-mTq" imageView="mxe-ab-LOT" style="IBUITableViewCellStyleSubtitle" id="KGk-i7-Jjw" customClass="F4FFoodSpotTableViewCell" customModule="FoodSpots_me" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="F4FFoodSpotTableViewCell" id="KGk-i7-Jjw" customClass="F4FFoodSpotTableViewCell" customModule="FoodSpots_me" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="319.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Ij-cU-pmS">
-                        <rect key="frame" x="55" y="144" width="31.5" height="19.5"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgC-aP-LMg">
+                        <rect key="frame" x="8" y="140" width="304" height="21"/>
                         <animations/>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="382-ET-jzq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.10588235294117647" green="0.25882352941176467" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CaP-Pu-mTq">
-                        <rect key="frame" x="55" y="163.5" width="40.5" height="13.5"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="We2-TY-Uql">
+                        <rect key="frame" x="8" y="169" width="304" height="21"/>
                         <animations/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="TkI-cJ-0Fv"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.10588235294117647" green="0.25882352941176467" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Restaurant.png" id="mxe-ab-LOT">
-                        <rect key="frame" x="15" y="147" width="25" height="25"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KW0-ZR-xRr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="132"/>
                         <animations/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="132" id="yXZ-pb-zdT"/>
+                        </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJx-s1-FNV">
+                        <rect key="frame" x="8" y="282" width="304" height="30"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="uU1-8w-KF1"/>
+                        </constraints>
+                        <color key="tintColor" red="0.10588235294117647" green="0.25882352941176467" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Like FoodSpot"/>
+                        <connections>
+                            <action selector="tappedLikeButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pxD-BL-5eZ"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <animations/>
+                <constraints>
+                    <constraint firstItem="KW0-ZR-xRr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="2g3-Dd-yiA"/>
+                    <constraint firstItem="VJx-s1-FNV" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="5zH-6d-ZkZ"/>
+                    <constraint firstItem="SgC-aP-LMg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="6yt-Om-3jx"/>
+                    <constraint firstItem="VJx-s1-FNV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="6zg-TM-CEe"/>
+                    <constraint firstItem="We2-TY-Uql" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="BKm-Ld-WJD"/>
+                    <constraint firstItem="KW0-ZR-xRr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="BfY-FY-nyB"/>
+                    <constraint firstItem="We2-TY-Uql" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="LnW-k4-NMG"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="KW0-ZR-xRr" secondAttribute="trailing" constant="-8" id="QEn-q7-HTw"/>
+                    <constraint firstItem="We2-TY-Uql" firstAttribute="top" secondItem="SgC-aP-LMg" secondAttribute="bottom" constant="8" id="e90-P0-L51"/>
+                    <constraint firstItem="VJx-s1-FNV" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="iMe-rI-bjs"/>
+                    <constraint firstItem="SgC-aP-LMg" firstAttribute="top" secondItem="KW0-ZR-xRr" secondAttribute="bottom" constant="8" id="ncC-1V-num"/>
+                    <constraint firstItem="SgC-aP-LMg" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="tRy-uY-GxI"/>
+                </constraints>
             </tableViewCellContentView>
             <animations/>
+            <connections>
+                <outlet property="buttonLike" destination="VJx-s1-FNV" id="HqO-0g-6O4"/>
+                <outlet property="imageMain" destination="KW0-ZR-xRr" id="BpH-Sd-JmP"/>
+                <outlet property="labelDistance" destination="We2-TY-Uql" id="G2e-xh-5MN"/>
+                <outlet property="labelName" destination="SgC-aP-LMg" id="DcW-tg-LcB"/>
+            </connections>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="Restaurant.png" width="25" height="25"/>
-    </resources>
 </document>
