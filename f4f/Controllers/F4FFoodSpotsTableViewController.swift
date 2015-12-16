@@ -20,13 +20,12 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
         tableView.separatorStyle = .None
         tableView.backgroundColor = F4FColors.backgroundColorLight
         
-        FoodSpot.list() { (result) -> Void in
-            self.foodSpots = result.filter(){ return $0.imageURL != nil }
-            self.tableView.reloadData()
-        }
+        let manager = F4FDataManager.sharedInstance
+        foodSpots = manager.foodSpots
         
         // Subscribe to notification
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"reload:", name: "F4FFoodSpotLikesDone", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"likesChanged:", name: "F4FFoodSpotsLikesChanged", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"foodSpotsChanged:", name: "F4FFoodSpotsChanged", object: nil)
     }
     
     deinit {
@@ -35,12 +34,15 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
     
     // MARK: - Notifications
     
-    // Called when likes are loaded
-    func reload(notification: NSNotification) {
+    func likesChanged(notification: NSNotification) {
+        tableView.reloadData()
+    }
+    
+    func foodSpotsChanged(notification: NSNotification) {
+        foodSpots = notification.object as! [FoodSpot]
         tableView.reloadData()
     }
 
-    
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         showRootViewController()
         
+        F4FDataManager.sharedInstance
+
         // Colors
         UINavigationBar.appearance().barTintColor = F4FColors.mainColor
         UINavigationBar.appearance().translucent = false
