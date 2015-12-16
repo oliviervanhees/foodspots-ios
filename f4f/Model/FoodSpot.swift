@@ -7,6 +7,7 @@
 //
 
 import SwiftyJSON
+import MapKit
 
 class FoodSpot{
     private static var API_BASE = "/pins"
@@ -16,20 +17,18 @@ class FoodSpot{
     var imageURL: String?
     var location: String?
     var distance: Double
-    var latitude: Double?
-    var longitude: Double?
+    var coordinate: CLLocationCoordinate2D?
     var liked: Bool = false
     
     var cachedImage: UIImage?
     
-    init(_foodSpotID: String, _name: String, _imageURL: String?, _location: String?, _distance: Double, _latitude: Double?, _longitude: Double?) {
+    init(_foodSpotID: String, _name: String, _imageURL: String?, _location: String?, _distance: Double, _coordinate: CLLocationCoordinate2D?) {
         foodSpotID = _foodSpotID
         name = _name
         imageURL = _imageURL
         location = _location
         distance = _distance
-        latitude = _latitude
-        longitude = _longitude
+        coordinate = _coordinate
     }
     
     static func fromJson(obj: JSON) -> FoodSpot {
@@ -42,8 +41,12 @@ class FoodSpot{
         
         let latitude = obj["latitude"].doubleValue
         let longitude = obj["longitude"].doubleValue
+        var coordinate: CLLocationCoordinate2D? = nil
+        if latitude != 0 && longitude != 0 {
+            coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+        }
         
-        return FoodSpot(_foodSpotID: foodSpotID, _name: name,_imageURL: imageURL, _location: location, _distance: distance,_latitude: latitude,_longitude:longitude)
+        return FoodSpot(_foodSpotID: foodSpotID, _name: name,_imageURL: imageURL, _location: location, _distance: distance,_coordinate: coordinate)
     }
     
     static func list(cb: ([FoodSpot]) -> Void) {

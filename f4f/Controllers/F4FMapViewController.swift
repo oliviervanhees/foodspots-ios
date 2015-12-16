@@ -43,9 +43,9 @@ class F4FMapViewController: UIViewController {
         mapView.setUserTrackingMode(.Follow, animated: true)
         
         for foodSpot : FoodSpot in foodSpots {
-            if let lat = foodSpot.latitude, lon = foodSpot.longitude {
+            if let coordinate = foodSpot.coordinate {
                 let annotation = MKPointAnnotation()
-                annotation.coordinate = CLLocationCoordinate2DMake(lat, lon)
+                annotation.coordinate = coordinate
                 annotation.title = foodSpot.name
                 annotation.subtitle = foodSpot.foodSpotID
                 mapView.addAnnotation(annotation)
