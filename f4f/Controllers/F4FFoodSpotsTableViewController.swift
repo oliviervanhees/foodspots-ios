@@ -24,7 +24,22 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
             self.foodSpots = result.filter(){ return $0.imageURL != nil }
             self.tableView.reloadData()
         }
+        
+        // Subscribe to notification
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"reload:", name: "F4FFoodSpotLikesDone", object: nil)
     }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    // MARK: - Notifications
+    
+    // Called when likes are loaded
+    func reload(notification: NSNotification) {
+        tableView.reloadData()
+    }
+
     
     // MARK: - Table view data source
     

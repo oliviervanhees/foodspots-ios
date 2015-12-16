@@ -75,6 +75,8 @@ class FoodSpot{
                     }
                 }
             }
+            // Send out notification
+            NSNotificationCenter.defaultCenter().postNotificationName("F4FFoodSpotLikesDone", object: nil, userInfo: nil)
         }
     }
     
