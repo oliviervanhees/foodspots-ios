@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import CoreLocation
 import CoreData
+import MapKit
 
 class F4FLocationManager: NSObject, CLLocationManagerDelegate{
     
@@ -96,47 +97,72 @@ class F4FLocationManager: NSObject, CLLocationManagerDelegate{
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let locationArray = locations as NSArray
-        let locationObj = locationArray.lastObject as! CLLocation
-        let coord = locationObj.coordinate
+        print("update")
         
-        let loc : LocationUpdate = LocationUpdate(context: moc)
-        loc.date = NSDate()
-        loc.longitude = coord.longitude
-        loc.latitude = coord.latitude
-        
-        do {
-            try moc.save()
-        } catch let error as NSError {
-            print("Could not save \(error), \(error.userInfo)")
+        if let x = manager.location{
+            let coord = x.coordinate
+            
+            let loc : LocationUpdate = LocationUpdate(context: moc)
+            loc.date = NSDate()
+            loc.longitude = coord.longitude
+            loc.latitude = coord.latitude
+            
+            do {
+                try moc.save()
+                
+                let info = ["latitude" : loc.latitude, "longitude" : loc.longitude]
+                NSNotificationCenter.defaultCenter().postNotificationName("F4FLocationUpdate", object: nil, userInfo: info)
+                
+            } catch let error as NSError {
+                print("Could not save \(error), \(error.userInfo)")
+            }
+            
+            // network
+            F4FNetworkController.sendLocationUpdate(loc)
+            
+            
+            let fetchRequest = NSFetchRequest(entityName: "LocationUpdate")
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
+            
+            do{
+                let fetchedResults = try moc.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+                let results = fetchedResults as! [LocationUpdate]
+                
+                for var i = 0; i < results.count - maxNumberLocationUpdates; i++ {
+                    let objectToDelete = results[i]
+                    moc.deleteObject(objectToDelete)
+                }
+                
+                do {
+                    try moc.save()
+                } catch let error as NSError {
+                    print("Could not save \(error), \(error.userInfo)")
+                }
+                
+            } catch let error as NSError {
+                print("Fetch failed: \(error.localizedDescription)")
+            }
         }
-        
-        // network
-        F4FNetworkController.sendLocationUpdate(loc)
-        
-        
+    }
+    
+    func getLastKnownLocation() -> (CLLocationCoordinate2D?){
         let fetchRequest = NSFetchRequest(entityName: "LocationUpdate")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         
         do{
             let fetchedResults = try moc.executeFetchRequest(fetchRequest) as? [NSManagedObject]
             let results = fetchedResults as! [LocationUpdate]
-           
-            for var i = 0; i < results.count - maxNumberLocationUpdates; i++ {
-                let objectToDelete = results[i]
-                moc.deleteObject(objectToDelete)
-            }
-            
-            do {
-                try moc.save()
-            } catch let error as NSError {
-                print("Could not save \(error), \(error.userInfo)")
+            if(results.count > 0){
+                let update = results[0]
+                return CLLocationCoordinate2DMake(update.latitude.doubleValue, update.longitude.doubleValue)
             }
             
         } catch let error as NSError {
             print("Fetch failed: \(error.localizedDescription)")
         }
+        return nil
     }
+    
 }
 
 // This extensions enables showing alerts without access to a viewcontroller

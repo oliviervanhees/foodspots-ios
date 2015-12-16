@@ -55,6 +55,7 @@
 		963DECFC1BBC606A00611FA5 /* F4FLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = F4FLocationManager.swift; path = Classes/F4FLocationManager.swift; sourceTree = "<group>"; };
 		965C740D1C21589500C73DDA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		965C740F1C21623000C73DDA /* F4FDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = F4FDataManager.swift; path = Classes/F4FDataManager.swift; sourceTree = "<group>"; };
+		965C74111C21807B00C73DDA /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 		9670A2523637C99FF452EECD /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9698CC6C1C2008D0005C89A7 /* FoodSpot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodSpot.swift; path = Model/FoodSpot.swift; sourceTree = "<group>"; };
 		96AD88561B91ED2500CCCB82 /* F4FNetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = F4FNetworkController.swift; path = Classes/F4FNetworkController.swift; sourceTree = "<group>"; };
@@ -156,6 +157,7 @@
 				96BBABD91B8E1DE600568D97 /* LaunchScreen.xib */,
 				96E6F3441B8EF61200097D5E /* Resources */,
 				96BBABCE1B8E1DE600568D97 /* Supporting Files */,
+				965C74111C21807B00C73DDA /* Location.gpx */,
 			);
 			path = f4f;
 			sourceTree = "<group>";

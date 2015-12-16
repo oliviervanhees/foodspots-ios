@@ -50,9 +50,12 @@ class FoodSpot{
     }
     
     static func list(cb: ([FoodSpot]) -> Void) {
+        let c = F4FLocationManager.sharedInstance.getLastKnownLocation()
+        let lat = Double(c?.latitude ?? 0)
+        let lon = Double(c?.longitude ?? 0)
         let parameters = [
-            "latitude": 52.36356159999999,
-            "longitude": 4.862994699999945
+            "latitude": lat,
+            "longitude": lon
         ]
         
         F4FNetworkController.performRequest(.GET, uri: API_BASE, parameters: parameters) { (data, code) -> Void in
