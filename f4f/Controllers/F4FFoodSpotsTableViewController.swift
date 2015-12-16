@@ -18,7 +18,7 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
         tableView.registerNib(UINib(nibName: "F4FFoodSpotTableViewCell", bundle: nil), forCellReuseIdentifier: "F4FFoodSpotTableViewCell")
      
         tableView.separatorStyle = .None
-        tableView.backgroundColor = UIColor.init(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
+        tableView.backgroundColor = F4FColors.backgroundColorLight
         
         
         FoodSpot.list() { (result) -> Void in
@@ -60,7 +60,7 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     }
     
-    func likeTapped(cell: UITableViewCell) {
+    func likeTapped(cell: F4FFoodSpotTableViewCell) {
         if let indexPath = tableView.indexPathForCell(cell){
             let foodSpot = foodSpots[indexPath.row]
             
@@ -78,6 +78,8 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
                 foodSpot.setLiked(!foodSpot.liked){ success in
                     if success {
                         foodSpot.liked = !foodSpot.liked
+                        cell.isLiked = foodSpot.liked
+                        cell.drawLiked()
                         cell.setNeedsDisplay()
                         self.tableView.reloadData()
                     }

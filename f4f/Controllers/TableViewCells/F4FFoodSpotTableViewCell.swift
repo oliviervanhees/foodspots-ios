@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FoodSpotCellLikeTappedDelegate {
-    func likeTapped(cell: UITableViewCell)
+    func likeTapped(cell: F4FFoodSpotTableViewCell)
 }
 
 class F4FFoodSpotTableViewCell: UITableViewCell {
@@ -30,11 +30,11 @@ class F4FFoodSpotTableViewCell: UITableViewCell {
         
         buttonLike.layer.cornerRadius = 5
         buttonLike.layer.borderWidth = 1
-        buttonLike.layer.borderColor = UIColor.init(red: 27/255, green: 66/255, blue: 82/255, alpha: 1.0).CGColor
+        buttonLike.layer.borderColor = F4FColors.blueColor.CGColor
         
         viewMain.layer.cornerRadius = 5
         viewMain.layer.masksToBounds = true
-        viewMain.backgroundColor = UIColor.init(red: 11/255, green: 26/255, blue: 32/255, alpha: 0.1)
+        viewMain.backgroundColor = F4FColors.backgroundColorDark
         
         layer.backgroundColor =  UIColor.clearColor().CGColor
     }
@@ -50,7 +50,7 @@ class F4FFoodSpotTableViewCell: UITableViewCell {
     }
     
     private func drawLiked(liked: Bool){
-        let color = liked ? UIColor.init(red: 118/255, green: 193/255, blue: 144/255, alpha: 1.0) : UIColor.whiteColor()
+        let color = liked ? F4FColors.blueColor : F4FColors.mainColor
         let text = liked ? "Navigate To FoodSpot" : "Like FoodSpot"
         
         buttonLike.backgroundColor = color

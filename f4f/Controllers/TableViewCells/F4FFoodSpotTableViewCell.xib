@@ -33,7 +33,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="n34-oy-f3u"/>
                                     <constraint firstAttribute="height" constant="30" id="uU1-8w-KF1"/>
                                 </constraints>
-                                <color key="tintColor" red="0.10588235294117647" green="0.25882352941176467" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Like FoodSpot"/>
                                 <connections>
                                     <action selector="tappedLikeButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pxD-BL-5eZ"/>

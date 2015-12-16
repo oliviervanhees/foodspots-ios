@@ -71,7 +71,8 @@ class FoodSpot{
                 if let id = json["id"].int,let like = json["likes"].bool {
                     let spots = foodSpots.filter(){ return $0.foodSpotID == String(id)}
                     if let spot = spots.first{
-                        spot.liked = like                    }
+                        spot.liked = like
+                    }
                 }
             }
         }

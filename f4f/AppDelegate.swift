@@ -29,9 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         showRootViewController()
         
         // Colors
-        UINavigationBar.appearance().barTintColor = UIColor.init(red: 118/255, green: 193/255, blue: 144/255, alpha: 1.0)
+        UINavigationBar.appearance().barTintColor = F4FColors.mainColor
         UINavigationBar.appearance().translucent = false
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.init(red: 27/255, green: 66/255, blue: 82/255, alpha: 1.0)]
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : F4FColors.blueColor]
         
         
         return true
