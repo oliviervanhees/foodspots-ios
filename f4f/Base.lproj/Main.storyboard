@@ -250,17 +250,17 @@
         <scene sceneID="8eY-J6-etX">
             <objects>
                 <tableViewController id="mUS-yT-e0o" customClass="F4FFoodSpotsTableViewController" customModule="FoodSpots_me" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="320" sectionHeaderHeight="28" sectionFooterHeight="28" id="6jw-GQ-KyA">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="339" sectionHeaderHeight="28" sectionFooterHeight="28" id="6jw-GQ-KyA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="MgC-ak-ODh">
-                                <rect key="frame" x="0.0" y="92" width="600" height="320"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="339"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MgC-ak-ODh" id="H2v-Zi-py0">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="320"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="339"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>

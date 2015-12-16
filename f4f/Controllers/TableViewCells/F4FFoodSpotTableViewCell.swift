@@ -17,8 +17,12 @@ class F4FFoodSpotTableViewCell: UITableViewCell {
     @IBOutlet weak var imageMain: UIImageView!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelDistance: UILabel!
+    @IBOutlet weak var labelFriends: UILabel!
     @IBOutlet weak var buttonLike: UIButton!
     @IBOutlet weak var viewMain: UIView!
+    @IBOutlet weak var friendImage1: UIImageView!
+    @IBOutlet weak var friendImage2: UIImageView!
+    @IBOutlet weak var friendImage3: UIImageView!
     
     var delegate: FoodSpotCellLikeTappedDelegate?
     

@@ -26,6 +26,7 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
         // Subscribe to notification
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"likesChanged:", name: "F4FFoodSpotsLikesChanged", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"foodSpotsChanged:", name: "F4FFoodSpotsChanged", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"friendsChanged:", name: "F4FFoodSpotsFriendsChanged", object: nil)
     }
     
     deinit {
@@ -40,6 +41,10 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
     
     func foodSpotsChanged(notification: NSNotification) {
         foodSpots = notification.object as! [FoodSpot]
+        tableView.reloadData()
+    }
+    
+    func friendsChanged(notification: NSNotification) {
         tableView.reloadData()
     }
 
@@ -66,6 +71,33 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
             cell.imageMain!.image = image
             cell.imageMain!.clipsToBounds = true
         }
+        
+        if(foodSpot.friends.count > 0){
+            foodSpot.imageFriend(0){ image -> Void in
+                cell.friendImage1!.image = image
+                cell.friendImage1!.clipsToBounds = true
+            }
+        }else{
+            cell.friendImage1.image = nil
+        }
+        if(foodSpot.friends.count > 1){
+            foodSpot.imageFriend(1){ image -> Void in
+                cell.friendImage2!.image = image
+                cell.friendImage2!.clipsToBounds = true
+            }
+        }else{
+            cell.friendImage3.image = nil
+        }
+        if(foodSpot.friends.count > 2){
+            foodSpot.imageFriend(2){ image -> Void in
+                cell.friendImage3!.image = image
+                cell.friendImage3!.clipsToBounds = true
+            }
+        }else{
+            cell.friendImage3.image = nil
+        }
+        
+        cell.labelFriends.text = "Favorite FoodSpot of: (\(foodSpot.nrFriends))"
         
         cell.isLiked = foodSpot.liked
         cell.drawLiked()

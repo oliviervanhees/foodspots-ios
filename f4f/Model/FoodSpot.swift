@@ -20,6 +20,14 @@ class FoodSpot{
     var coordinate: CLLocationCoordinate2D?
     var liked: Bool = false
     
+    var friends: [String] = [] // contains image url's
+    
+    var nrFriends: Int {
+        get{
+            return friends.count
+        }
+    }
+    
     var cachedImage: UIImage?
     
     init(_foodSpotID: String, _name: String, _imageURL: String?, _location: String?, _distance: Double, _coordinate: CLLocationCoordinate2D?) {
@@ -61,6 +69,7 @@ class FoodSpot{
         F4FNetworkController.performRequest(.GET, uri: API_BASE, parameters: parameters) { (data, code) -> Void in
             let result = data.map{ return FoodSpot.fromJson($1)}
             getLikes(result)
+            getFriends(result)
             cb(result)
         }
     }
@@ -85,7 +94,36 @@ class FoodSpot{
             NSNotificationCenter.defaultCenter().postNotificationName("F4FFoodSpotsLikesChanged", object: nil, userInfo: nil)
         }
     }
-    
+
+    static func getFriends(foodSpots: [FoodSpot]){
+        let pins = foodSpots.map() { return Int($0.foodSpotID)! }
+        
+        let parameters = [
+            "pins": pins
+        ]
+        
+        F4FNetworkController.performRequest(.GET, uri: API_BASE + "/friends", parameters: parameters) { (data, code) -> Void in
+            for (_,json):(String, JSON) in data{
+                if let id = json["id"].int, let friends = json["friends"].array {
+                    let spots = foodSpots.filter(){ return $0.foodSpotID == String(id)}
+                    if let spot = spots.first{
+                        for friend in friends {
+                            if var imgURL = friend["image_file_name"].string {
+                                if (!imgURL.containsString("https")) {
+                                    imgURL = imgURL.stringByReplacingOccurrencesOfString("http", withString: "https")
+                                }
+                                print(imgURL)
+
+                                spot.friends.append(imgURL)
+                            }
+                        }
+                    }
+                }
+            }
+            NSNotificationCenter.defaultCenter().postNotificationName("F4FFoodSpotsFriendsChanged", object: nil, userInfo: nil)
+        }
+    }
+
     func image(cb: (UIImage?) -> Void) {
         if let image = cachedImage{
             cb(image)
@@ -98,6 +136,15 @@ class FoodSpot{
             }else{
                 cb(nil)
             }
+        }
+    }
+    
+    func imageFriend(nr: Int, cb: (UIImage?) -> Void) {
+        assert(0 <= nr && nr < friends.count)
+       
+        let url = friends[nr]
+        F4FNetworkController.getImage(url)  { (image) -> Void in
+            cb(image)
         }
     }
     
