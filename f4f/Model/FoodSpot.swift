@@ -19,9 +19,9 @@ class FoodSpot{
     var latitude: Double?
     var longitude: Double?
     var liked: Bool = false
-
+    
     var cachedImage: UIImage?
-
+    
     init(_foodSpotID: String, _name: String, _imageURL: String?, _location: String?, _distance: Double, _latitude: Double?, _longitude: Double?) {
         foodSpotID = _foodSpotID
         name = _name
@@ -39,7 +39,7 @@ class FoodSpot{
         let location = obj["location"].string
         var distance = obj["distance"].doubleValue ?? 0.0
         distance *= 1.60934 // convert from miles to km
-
+        
         let latitude = obj["latitude"].doubleValue
         let longitude = obj["longitude"].doubleValue
         

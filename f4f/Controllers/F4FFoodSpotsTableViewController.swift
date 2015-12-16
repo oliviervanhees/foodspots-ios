@@ -16,10 +16,9 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
         super.viewDidLoad()
         
         tableView.registerNib(UINib(nibName: "F4FFoodSpotTableViewCell", bundle: nil), forCellReuseIdentifier: "F4FFoodSpotTableViewCell")
-     
+        
         tableView.separatorStyle = .None
         tableView.backgroundColor = F4FColors.backgroundColorLight
-        
         
         FoodSpot.list() { (result) -> Void in
             self.foodSpots = result.filter(){ return $0.imageURL != nil }
@@ -87,15 +86,16 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
             }
         }
     }
+    
     // MARK: - Navigation
     /*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "SegueFoodSpot"){
-            let viewController = segue.destinationViewController as! F4FFoodSpotViewController
-            let selectedIndex = self.tableView.indexPathForSelectedRow!
-            viewController.title = foodSpots[selectedIndex.row]
-        }
+    if(segue.identifier == "SegueFoodSpot"){
+    let viewController = segue.destinationViewController as! F4FFoodSpotViewController
+    let selectedIndex = self.tableView.indexPathForSelectedRow!
+    viewController.title = foodSpots[selectedIndex.row]
     }
-*/
+    }
+    */
     
 }

@@ -13,7 +13,7 @@ protocol FoodSpotCellLikeTappedDelegate {
 }
 
 class F4FFoodSpotTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var imageMain: UIImageView!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelDistance: UILabel!
@@ -26,7 +26,6 @@ class F4FFoodSpotTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         
         buttonLike.layer.cornerRadius = 5
         buttonLike.layer.borderWidth = 1
@@ -37,12 +36,6 @@ class F4FFoodSpotTableViewCell: UITableViewCell {
         viewMain.backgroundColor = F4FColors.backgroundColorDark
         
         layer.backgroundColor =  UIColor.clearColor().CGColor
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func drawLiked(){
