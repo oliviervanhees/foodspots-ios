@@ -126,11 +126,10 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
                 foodSpot.setLiked(!foodSpot.liked){ success in
                     if success {
                         foodSpot.liked = !foodSpot.liked
-                        cell.isLiked = foodSpot.liked
-                        cell.drawLiked()
-                        cell.setNeedsDisplay()
-                        self.tableView.reloadData()
+                       
                     }
+                    cell.isLiked = foodSpot.liked
+                    cell.drawLiked()
                 }
             }
         }

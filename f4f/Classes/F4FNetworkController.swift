@@ -47,6 +47,7 @@ class F4FNetworkController {
                     }
                 }else{
                     // No response, possibly no connection
+                    callback(nil, 503)
                 }
             }
         }
