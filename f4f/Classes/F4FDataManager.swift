@@ -35,7 +35,6 @@ class F4FDataManager: NSObject {
     
     func locationUpdate(notification: NSNotification) {
         if let lat = notification.userInfo!["latitude"]?.doubleValue, let lon = notification.userInfo!["longitude"]?.doubleValue{
-            print("updated \(lat) \(lon)")
             updateFoodSpots()
         }
     }

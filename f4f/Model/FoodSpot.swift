@@ -112,8 +112,6 @@ class FoodSpot{
                                 if (!imgURL.containsString("https")) {
                                     imgURL = imgURL.stringByReplacingOccurrencesOfString("http", withString: "https")
                                 }
-                                print(imgURL)
-
                                 spot.friends.append(imgURL)
                             }
                         }
