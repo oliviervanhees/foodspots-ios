@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="daX-gk-ZWi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="daX-gk-ZWi">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +20,6 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To FoodSpots.me" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHp-4g-t8Z">
                                 <rect key="frame" x="141" y="99" width="318" height="26"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="318" id="wNU-da-joJ"/>
                                 </constraints>
@@ -29,7 +28,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EHp-4g-t8Z" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Fs6-y3-znG"/>
@@ -49,7 +47,7 @@
             </objects>
             <point key="canvasLocation" x="1260" y="-398"/>
         </scene>
-        <!--Nearby-->
+        <!--Maps-->
         <scene sceneID="BaG-ah-tP6">
             <objects>
                 <viewController id="Zm8-9v-OZn" customClass="F4FMapViewController" customModule="FoodSpots_me" customModuleProvider="target" sceneMemberID="viewController">
@@ -63,10 +61,8 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xJ9-d6-PfC">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <animations/>
                             </mapView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="xJ9-d6-PfC" secondAttribute="trailing" constant="-20" id="SSZ-bc-MTY"/>
@@ -75,7 +71,7 @@
                             <constraint firstItem="xJ9-d6-PfC" firstAttribute="leading" secondItem="ZGC-dK-ru0" secondAttribute="leadingMargin" constant="-20" id="s1q-jA-gZJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Nearby" id="e2U-uF-kIW"/>
+                    <navigationItem key="navigationItem" title="Maps" id="e2U-uF-kIW"/>
                     <connections>
                         <outlet property="mapView" destination="xJ9-d6-PfC" id="RFj-c6-wYD"/>
                     </connections>
@@ -98,18 +94,15 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4Ey-T3-AKG">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="39K-Gu-8pl">
                                         <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="39K-Gu-8pl" id="A8w-oE-Rqs">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <animations/>
                                         </tableViewCellContentView>
-                                        <animations/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -118,7 +111,6 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4Ey-T3-AKG" firstAttribute="top" secondItem="P84-du-x9h" secondAttribute="topMargin" id="EU1-fC-iyz"/>
@@ -132,7 +124,6 @@
                             <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="San-cL-ahz">
                                 <rect key="frame" x="531" y="6" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
                                 <connections>
                                     <action selector="switched:" destination="Tqt-SA-YBv" eventType="valueChanged" id="Ztk-ad-uUx"/>
                                 </connections>
@@ -155,7 +146,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="83P-uc-kwj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
@@ -174,16 +164,15 @@
             </objects>
             <point key="canvasLocation" x="1260" y="332"/>
         </scene>
-        <!--Nearby-->
+        <!--Maps-->
         <scene sceneID="KGt-iB-Arp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0D5-ns-ucv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Nearby" image="Pin.png" id="b6K-F5-iwd"/>
+                    <tabBarItem key="tabBarItem" title="Maps" image="Pin.png" id="b6K-F5-iwd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QMx-2c-fAh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -208,18 +197,15 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="7wc-hS-B2r">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <animations/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Kx7-Kt-cu4">
-                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kx7-Kt-cu4" id="izY-89-NRf">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <animations/>
                                         </tableViewCellContentView>
-                                        <animations/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -228,7 +214,6 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7wc-hS-B2r" firstAttribute="bottom" secondItem="jO5-VE-qRs" secondAttribute="bottomMargin" id="5bj-0n-Dti"/>
@@ -246,25 +231,22 @@
             </objects>
             <point key="canvasLocation" x="3162" y="332"/>
         </scene>
-        <!--FoodSpots-->
+        <!--Nearby-->
         <scene sceneID="8eY-J6-etX">
             <objects>
                 <tableViewController id="mUS-yT-e0o" customClass="F4FFoodSpotsTableViewController" customModule="FoodSpots_me" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="339" sectionHeaderHeight="28" sectionFooterHeight="28" id="6jw-GQ-KyA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="MgC-ak-ODh">
                                 <rect key="frame" x="0.0" y="92" width="600" height="339"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MgC-ak-ODh" id="H2v-Zi-py0">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="339"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="338.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <connections>
                                     <segue destination="Yqa-p9-uNl" kind="show" identifier="SegueFoodSpot" id="vP6-sM-zXJ"/>
                                 </connections>
@@ -275,7 +257,7 @@
                             <outlet property="delegate" destination="mUS-yT-e0o" id="kee-cb-J82"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="FoodSpots" id="I31-zL-GPM"/>
+                    <navigationItem key="navigationItem" title="Nearby" id="I31-zL-GPM"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sR5-3F-Kwy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -292,7 +274,6 @@
                     <view key="view" contentMode="scaleToFill" id="CI4-zP-1ds">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -309,7 +290,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sJS-rk-RzE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -329,7 +309,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="amk-kC-Ufa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -340,16 +319,15 @@
             </objects>
             <point key="canvasLocation" x="2350" y="332"/>
         </scene>
-        <!--FoodSpots-->
+        <!--Nearby-->
         <scene sceneID="3qa-dV-ejT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C9E-OW-LDA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="FoodSpots" image="Restaurant.png" id="SjQ-yX-Jdw"/>
+                    <tabBarItem key="tabBarItem" title="Nearby" image="Restaurant.png" id="SjQ-yX-Jdw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EyK-0I-ssn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

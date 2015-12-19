@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="339"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="339"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="338.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w9N-wc-DN5">
@@ -20,7 +20,6 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgC-aP-LMg">
                                 <rect key="frame" x="8" y="140" width="288" height="21"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="382-ET-jzq"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="21" id="NaQ-YO-VOf"/>
@@ -32,7 +31,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="We2-TY-Uql">
                                 <rect key="frame" x="8" y="169" width="288" height="21"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="TkI-cJ-0Fv"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="21" id="qEU-7S-9Yx"/>
@@ -42,17 +40,15 @@
                                 <color key="textColor" red="0.10588235294117647" green="0.25882352941176467" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KW0-ZR-xRr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="knife_fork.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="KW0-ZR-xRr">
                                 <rect key="frame" x="0.0" y="0.0" width="304" height="132"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="132" id="Ajw-Mp-ydB"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJx-s1-FNV">
                                 <rect key="frame" x="8" y="285" width="288" height="30"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="n34-oy-f3u"/>
                                     <constraint firstAttribute="height" constant="30" id="uU1-8w-KF1"/>
@@ -65,7 +61,6 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T25-4W-ciP">
                                 <rect key="frame" x="8" y="227" width="50" height="50"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="cFi-Hl-39g"/>
                                     <constraint firstAttribute="width" constant="50" id="glF-3F-kP5"/>
@@ -73,7 +68,6 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgK-wA-CoU">
                                 <rect key="frame" x="8" y="198" width="288" height="21"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="B4F-Vo-Dar"/>
                                 </constraints>
@@ -83,7 +77,6 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dlY-po-zwA">
                                 <rect key="frame" x="66" y="227" width="50" height="50"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="gzT-Td-OFU"/>
                                     <constraint firstAttribute="width" constant="50" id="heG-6v-IpU"/>
@@ -91,14 +84,12 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="79a-Y8-aaT">
                                 <rect key="frame" x="127" y="227" width="50" height="50"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="0bN-G4-vlv"/>
                                     <constraint firstAttribute="height" constant="50" id="aj7-bw-EKJ"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dlY-po-zwA" firstAttribute="leading" secondItem="T25-4W-ciP" secondAttribute="trailing" constant="8" id="3Kl-rC-Sn2"/>
@@ -131,7 +122,6 @@
                         </constraints>
                     </view>
                 </subviews>
-                <animations/>
                 <constraints>
                     <constraint firstItem="w9N-wc-DN5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="0Ad-Q8-VWp"/>
                     <constraint firstItem="w9N-wc-DN5" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Rcx-do-gbY"/>
@@ -139,7 +129,6 @@
                     <constraint firstItem="w9N-wc-DN5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="gRA-FO-SZ3"/>
                 </constraints>
             </tableViewCellContentView>
-            <animations/>
             <connections>
                 <outlet property="buttonLike" destination="VJx-s1-FNV" id="HqO-0g-6O4"/>
                 <outlet property="friendImage1" destination="T25-4W-ciP" id="xp1-B5-S4I"/>
@@ -154,4 +143,7 @@
             <point key="canvasLocation" x="380" y="426.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="knife_fork.jpg" width="710" height="710"/>
+    </resources>
 </document>

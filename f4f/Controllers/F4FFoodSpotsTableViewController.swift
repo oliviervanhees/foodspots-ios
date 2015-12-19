@@ -68,8 +68,15 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
         cell.labelDistance.text = "Distance \(distance) km"
         
         foodSpot.image{ image -> Void in
-            cell.imageMain!.image = image
-            cell.imageMain!.clipsToBounds = true
+            if(image != nil){
+                cell.imageMain!.image = image
+                cell.imageMain!.clipsToBounds = true
+                cell.imageMain.contentMode = .ScaleAspectFill
+            }else{
+                print("ok")
+                cell.imageMain!.image = UIImage(named: "knife_fork.jpg")
+                cell.imageMain.contentMode = .ScaleAspectFit
+            }
         }
         
         if(foodSpot.friends.count > 0){
