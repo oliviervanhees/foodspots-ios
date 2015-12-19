@@ -73,7 +73,6 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
                 cell.imageMain!.clipsToBounds = true
                 cell.imageMain.contentMode = .ScaleAspectFill
             }else{
-                print("ok")
                 cell.imageMain!.image = UIImage(named: "knife_fork.jpg")
                 cell.imageMain.contentMode = .ScaleAspectFit
             }

@@ -18,8 +18,10 @@ class F4FNetworkController {
     private static var API_BASE = "https://foodspots.me/api"
     
     private static func getHeaders() -> [String: String] {
+        let token = FBSDKAccessToken.currentAccessToken() != nil ? FBSDKAccessToken.currentAccessToken().tokenString : ""
+        
         return [
-            "Authorization": "\(FBSDKAccessToken.currentAccessToken().tokenString)",
+            "Authorization": "\(token)",
             "Accept": "application/json"
         ];
     }

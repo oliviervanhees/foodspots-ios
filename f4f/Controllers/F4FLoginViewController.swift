@@ -29,6 +29,9 @@ class F4FLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     {
         if error == nil {
             // Logged in successfuly
+            
+            F4FDataManager.sharedInstance.updateFoodSpots()
+            
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc =  storyboard.instantiateInitialViewController() as UIViewController!

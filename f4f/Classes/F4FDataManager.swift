@@ -8,6 +8,7 @@
 
 import Foundation
 import MapKit
+import FBSDKCoreKit
 
 class F4FDataManager: NSObject {
     
@@ -18,13 +19,15 @@ class F4FDataManager: NSObject {
     private override init(){
         super.init()
     
-        updateFoodSpots()
+        if(FBSDKAccessToken.currentAccessToken() != nil){
+            updateFoodSpots()
+        }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"locationUpdate:", name: "F4FLocationUpdate", object: nil)
 
     }
     
-    private func updateFoodSpots(){
+    func updateFoodSpots(){
         FoodSpot.list() { (result) -> Void in
             self.foodSpots = result//.filter(){ return $0.imageURL != nil }
             NSNotificationCenter.defaultCenter().postNotificationName("F4FFoodSpotsChanged", object: self.foodSpots, userInfo: nil)
