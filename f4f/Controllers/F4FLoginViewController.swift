@@ -12,15 +12,14 @@ import FBSDKLoginKit
 
 class F4FLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
+    @IBOutlet weak var facebookLoginView: FBSDKLoginButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Setup Facebook Login button
-        let loginButton = FBSDKLoginButton()
-        loginButton.readPermissions = ["public_profile", "email", "user_friends"]
-        loginButton.center = self.view.center
-        loginButton.delegate = self
-        self.view.addSubview(loginButton)
+        facebookLoginView.readPermissions = ["public_profile", "email", "user_friends"]
+        facebookLoginView.delegate = self
     }
     
     // MARK - Facebook Button
