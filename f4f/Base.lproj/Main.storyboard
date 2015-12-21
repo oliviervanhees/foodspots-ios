@@ -101,7 +101,6 @@ Connect with Facebook</string>
                                     </label>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="anU-PB-E3p" customClass="FBSDKLoginButton">
                                         <rect key="frame" x="193" y="221" width="175" height="26"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="26" id="iUl-Sk-gTe"/>
                                         </constraints>
