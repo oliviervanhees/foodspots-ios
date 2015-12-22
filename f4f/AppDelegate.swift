@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Colors
         UINavigationBar.appearance().barTintColor = F4FColors.mainColor
-        UINavigationBar.appearance().translucent = false
+        UINavigationBar.appearance().translucent = true
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : F4FColors.blueColor]
         
         return true
