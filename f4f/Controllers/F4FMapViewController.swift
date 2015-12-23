@@ -61,8 +61,9 @@ class F4FMapViewController: UIViewController, MKMapViewDelegate {
             let routeButton = UIButton(type: UIButtonType.Custom) as UIButton
             routeButton.frame.size.width = 50
             routeButton.frame.size.height = 55
-            routeButton.backgroundColor = F4FColors.mainColor
-            routeButton.setImage(UIImage(named: "Car"), forState: .Normal)
+            routeButton.backgroundColor = F4FColors.blueColor
+            routeButton.setImage(UIImage(named: "Car")?.imageWithRenderingMode(.AlwaysTemplate), forState: .Normal)
+            routeButton.tintColor = UIColor.whiteColor()
     
             view?.leftCalloutAccessoryView = routeButton
         } else {
