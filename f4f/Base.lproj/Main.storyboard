@@ -275,7 +275,6 @@ Connect with Facebook</string>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
-                        <segue destination="p8S-zY-09p" kind="relationship" relationship="viewControllers" id="ymV-Tt-TQ5"/>
                         <segue destination="C9E-OW-LDA" kind="relationship" relationship="viewControllers" id="yV7-Jc-gbu"/>
                         <segue destination="0D5-ns-ucv" kind="relationship" relationship="viewControllers" id="FeC-6O-iO1"/>
                         <segue destination="4vd-ut-Wv5" kind="relationship" relationship="viewControllers" id="rZq-VO-lKo"/>
@@ -405,6 +404,7 @@ Connect with Facebook</string>
         <!--Tracker-->
         <scene sceneID="b2a-yl-Ed4">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lz6-px-3q9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p8S-zY-09p" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Tracker" image="Location.png" id="hpZ-89-MSf"/>
                     <toolbarItems/>
@@ -417,7 +417,6 @@ Connect with Facebook</string>
                         <segue destination="Tqt-SA-YBv" kind="relationship" relationship="rootViewController" id="guq-HF-HD2"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lz6-px-3q9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2350" y="-1125"/>
         </scene>
