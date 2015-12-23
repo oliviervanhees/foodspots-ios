@@ -22,6 +22,8 @@
 		96DE2A5E1C255AB700D6DC04 /* knife_fork.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96DE2A5D1C255AB700D6DC04 /* knife_fork.jpg */; };
 		96DE2A601C28904F00D6DC04 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96DE2A5F1C28904F00D6DC04 /* bg.jpg */; };
 		96DE2A681C2AA1A900D6DC04 /* knife_fork.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DE2A671C2AA1A900D6DC04 /* knife_fork.png */; };
+		96DE2A6B1C2AA84400D6DC04 /* Car@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DE2A691C2AA84400D6DC04 /* Car@2x.png */; };
+		96DE2A6C1C2AA84400D6DC04 /* Car@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DE2A6A1C2AA84400D6DC04 /* Car@3x.png */; };
 		96E6F3421B8EF46B00097D5E /* F4FLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E6F3411B8EF46B00097D5E /* F4FLoginViewController.swift */; };
 		96E6F3501B8EF87E00097D5E /* Pin@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E6F34C1B8EF87E00097D5E /* Pin@3x.png */; };
 		96E6F3511B8EF87E00097D5E /* Pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E6F34D1B8EF87E00097D5E /* Pin@2x.png */; };
@@ -74,6 +76,8 @@
 		96DE2A5D1C255AB700D6DC04 /* knife_fork.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = knife_fork.jpg; path = Resources/Images/knife_fork.jpg; sourceTree = "<group>"; };
 		96DE2A5F1C28904F00D6DC04 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg.jpg; path = Resources/Images/bg.jpg; sourceTree = "<group>"; };
 		96DE2A671C2AA1A900D6DC04 /* knife_fork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = knife_fork.png; path = Resources/Images/knife_fork.png; sourceTree = "<group>"; };
+		96DE2A691C2AA84400D6DC04 /* Car@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Car@2x.png"; path = "Resources/Icons/Car@2x.png"; sourceTree = "<group>"; };
+		96DE2A6A1C2AA84400D6DC04 /* Car@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Car@3x.png"; path = "Resources/Icons/Car@3x.png"; sourceTree = "<group>"; };
 		96E6F3411B8EF46B00097D5E /* F4FLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = F4FLoginViewController.swift; path = Controllers/F4FLoginViewController.swift; sourceTree = "<group>"; };
 		96E6F34C1B8EF87E00097D5E /* Pin@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Pin@3x.png"; path = "Resources/Icons/Pin@3x.png"; sourceTree = "<group>"; };
 		96E6F34D1B8EF87E00097D5E /* Pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Pin@2x.png"; path = "Resources/Icons/Pin@2x.png"; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 		96E6F3451B8EF61B00097D5E /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				96DE2A691C2AA84400D6DC04 /* Car@2x.png */,
+				96DE2A6A1C2AA84400D6DC04 /* Car@3x.png */,
 				96F654291C12E76800152F2E /* Restaurant@3x.png */,
 				96F6542A1C12E76800152F2E /* Restaurant@2x.png */,
 				96E6F3541B8EFCA400097D5E /* Settings@3x.png */,
@@ -355,6 +361,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96DE2A6C1C2AA84400D6DC04 /* Car@3x.png in Resources */,
 				96E6F3521B8EF87E00097D5E /* Location@3x.png in Resources */,
 				96DE2A681C2AA1A900D6DC04 /* knife_fork.png in Resources */,
 				96BBABD61B8E1DE600568D97 /* Main.storyboard in Resources */,
@@ -368,6 +375,7 @@
 				96DE2A5E1C255AB700D6DC04 /* knife_fork.jpg in Resources */,
 				96E6F3571B8EFCA400097D5E /* Settings@2x.png in Resources */,
 				96F6542B1C12E76800152F2E /* Restaurant@3x.png in Resources */,
+				96DE2A6B1C2AA84400D6DC04 /* Car@2x.png in Resources */,
 				96F654311C13006500152F2E /* F4FFoodSpotTableViewCell.xib in Resources */,
 				96E6F3501B8EF87E00097D5E /* Pin@3x.png in Resources */,
 			);

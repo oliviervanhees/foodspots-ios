@@ -155,4 +155,16 @@ class FoodSpot{
             cb(code == 201)
         }
     }
+    
+    func openInMaps(){
+        if var location = self.location{
+            location = location.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+            if let targetURL = NSURL(string: "http://maps.apple.com/maps?daddr=\(location)"){
+                let isAvailable = UIApplication.sharedApplication().canOpenURL(targetURL)
+                if isAvailable {
+                    UIApplication.sharedApplication().openURL(targetURL)
+                }
+            }
+        }
+    }
 }

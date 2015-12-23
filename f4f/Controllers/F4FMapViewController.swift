@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class F4FMapViewController: UIViewController {
+class F4FMapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -20,6 +20,8 @@ class F4FMapViewController: UIViewController {
 
         let manager = F4FDataManager.sharedInstance
         foodSpots = manager.foodSpots
+        
+        mapView.delegate = self
         
         initMapView()
         
@@ -43,15 +45,52 @@ class F4FMapViewController: UIViewController {
         mapView.setUserTrackingMode(.Follow, animated: true)
         
         for foodSpot : FoodSpot in foodSpots {
-            if let coordinate = foodSpot.coordinate {
-                let annotation = MKPointAnnotation()
-                annotation.coordinate = coordinate
-                annotation.title = foodSpot.name
-                annotation.subtitle = foodSpot.foodSpotID
-                
+            if let _ = foodSpot.coordinate {
+                let annotation = MapPin(foodSpot: foodSpot)
                 mapView.addAnnotation(annotation)
             }
         }
     }
     
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        var view = mapView.dequeueReusableAnnotationViewWithIdentifier("test")
+        if view == nil {
+            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "test")
+            view?.canShowCallout = true
+            
+            let routeButton = UIButton(type: UIButtonType.Custom) as UIButton
+            routeButton.frame.size.width = 50
+            routeButton.frame.size.height = 55
+            routeButton.backgroundColor = F4FColors.mainColor
+            routeButton.setImage(UIImage(named: "Car"), forState: .Normal)
+    
+            view?.leftCalloutAccessoryView = routeButton
+        } else {
+            view?.annotation = annotation
+        }
+        return view
+    }
+    
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.leftCalloutAccessoryView {
+            let selectedAnnotation = view.annotation as? MapPin
+            let foodSpot = selectedAnnotation?.foodSpot
+            foodSpot!.openInMaps()
+
+        }
+    }
+
+    class MapPin : NSObject, MKAnnotation {
+        var coordinate: CLLocationCoordinate2D
+        var title: String?
+        var subtitle: String?
+        var foodSpot: FoodSpot
+        
+        init(foodSpot: FoodSpot) {
+            self.coordinate = foodSpot.coordinate!
+            self.title = foodSpot.name
+            self.subtitle = nil
+            self.foodSpot = foodSpot
+        }
+    }
 }

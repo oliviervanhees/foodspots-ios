@@ -119,15 +119,7 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
             let foodSpot = foodSpots[indexPath.row]
             
             if(foodSpot.liked){
-                if var location = foodSpot.location{
-                    location = location.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
-                    if let targetURL = NSURL(string: "http://maps.apple.com/maps?daddr=\(location)"){
-                        let isAvailable = UIApplication.sharedApplication().canOpenURL(targetURL)
-                        if isAvailable {
-                            UIApplication.sharedApplication().openURL(targetURL)
-                        }
-                    }
-                }
+                foodSpot.openInMaps()
             }else{
                 foodSpot.setLiked(!foodSpot.liked){ success in
                     if success {
