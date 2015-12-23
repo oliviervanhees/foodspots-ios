@@ -367,15 +367,6 @@ Connect with Facebook</string>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MgC-ak-ODh" id="H2v-Zi-py0">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="339"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KDt-mk-jkx">
-                                            <rect key="frame" x="199" y="184" width="119" height="29"/>
-                                            <segments>
-                                                <segment title="Nearby"/>
-                                                <segment title="Friends"/>
-                                            </segments>
-                                        </segmentedControl>
-                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="Yqa-p9-uNl" kind="show" identifier="SegueFoodSpot" id="vP6-sM-zXJ"/>
