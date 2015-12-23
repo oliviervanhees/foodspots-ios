@@ -48,6 +48,7 @@ class F4FMapViewController: UIViewController {
                 annotation.coordinate = coordinate
                 annotation.title = foodSpot.name
                 annotation.subtitle = foodSpot.foodSpotID
+                
                 mapView.addAnnotation(annotation)
             }
         }
