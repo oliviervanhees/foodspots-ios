@@ -114,12 +114,14 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     }
     
+    // MARK: - FoodSpot button delegate
+    
     func likeTapped(cell: F4FFoodSpotTableViewCell) {
         if let indexPath = tableView.indexPathForCell(cell){
             let foodSpot = foodSpots[indexPath.row]
             
             if(foodSpot.liked){
-                foodSpot.openInMaps()
+
             }else{
                 foodSpot.setLiked(!foodSpot.liked){ success in
                     if success {
@@ -130,6 +132,13 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
                     cell.drawLiked()
                 }
             }
+        }
+    }
+    
+    func routeTapped(cell: F4FFoodSpotTableViewCell) {
+        if let indexPath = tableView.indexPathForCell(cell){
+            let foodSpot = foodSpots[indexPath.row]
+            foodSpot.openInMaps()
         }
     }
     
