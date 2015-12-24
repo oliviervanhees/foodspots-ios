@@ -77,30 +77,18 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
                 cell.imageMain.contentMode = .ScaleAspectFit
             }
         }
-        
-        if(foodSpot.friends.count > 0){
-            foodSpot.imageFriend(0){ image -> Void in
-                cell.friendImage1!.image = image
-                cell.friendImage1!.clipsToBounds = true
+
+        let imageViews = [cell.friendImage1!, cell.friendImage2!, cell.friendImage3!]
+        for(var i = 0; i < 3; i++){
+            let imageView = imageViews[i]
+            if(foodSpot.friends.count > i){
+                foodSpot.imageFriend(i){ image -> Void in
+                    imageView.image = image?.af_imageWithRoundedCornerRadius(2)
+                    imageView.clipsToBounds = true
+                }
+            }else{
+                imageView.image = nil
             }
-        }else{
-            cell.friendImage1.image = nil
-        }
-        if(foodSpot.friends.count > 1){
-            foodSpot.imageFriend(1){ image -> Void in
-                cell.friendImage2!.image = image
-                cell.friendImage2!.clipsToBounds = true
-            }
-        }else{
-            cell.friendImage3.image = nil
-        }
-        if(foodSpot.friends.count > 2){
-            foodSpot.imageFriend(2){ image -> Void in
-                cell.friendImage3!.image = image
-                cell.friendImage3!.clipsToBounds = true
-            }
-        }else{
-            cell.friendImage3.image = nil
         }
         
         cell.labelFriends.text = "Favorite FoodSpot of: (\(foodSpot.nrFriends))"
