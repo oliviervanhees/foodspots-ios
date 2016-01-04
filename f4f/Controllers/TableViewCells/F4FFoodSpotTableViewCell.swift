@@ -64,7 +64,7 @@ class F4FFoodSpotTableViewCell: UITableViewCell {
     
     private func drawLiked(liked: Bool){
         let color = liked ? UIColor.clearColor() : F4FColors.blueColor
-        let text = liked ? "You liked this FoodSpot" : "Like FoodSpot"
+        let text = liked ? "Your FoodSpot" : "Like FoodSpot"
         let textColor = liked ? F4FColors.blueColor : UIColor.whiteColor()
         let image = liked ? UIImage(named: "Heart_filled") : UIImage(named: "Heart")
         
