@@ -221,7 +221,7 @@ Connect with Facebook</string>
                                         <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="39K-Gu-8pl" id="A8w-oE-Rqs">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -275,6 +275,7 @@ Connect with Facebook</string>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
+                        <segue destination="6tG-Ok-ouC" kind="relationship" relationship="viewControllers" id="eSk-V1-b7i"/>
                         <segue destination="C9E-OW-LDA" kind="relationship" relationship="viewControllers" id="yV7-Jc-gbu"/>
                         <segue destination="0D5-ns-ucv" kind="relationship" relationship="viewControllers" id="FeC-6O-iO1"/>
                         <segue destination="4vd-ut-Wv5" kind="relationship" relationship="viewControllers" id="rZq-VO-lKo"/>
@@ -303,7 +304,7 @@ Connect with Facebook</string>
             </objects>
             <point key="canvasLocation" x="2350" y="-398"/>
         </scene>
-        <!--Settings-->
+        <!--Profile-->
         <scene sceneID="jbz-pB-K5k">
             <objects>
                 <viewController id="wQt-KU-gzm" customClass="F4FSettingsViewController" customModule="FoodSpots_me" customModuleProvider="target" sceneMemberID="viewController">
@@ -323,7 +324,7 @@ Connect with Facebook</string>
                                         <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kx7-Kt-cu4" id="izY-89-NRf">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -342,7 +343,7 @@ Connect with Facebook</string>
                             <constraint firstItem="7wc-hS-B2r" firstAttribute="top" secondItem="jO5-VE-qRs" secondAttribute="topMargin" id="u3B-P7-Rj6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="XVD-fb-Byd"/>
+                    <navigationItem key="navigationItem" title="Profile" id="XVD-fb-Byd"/>
                     <connections>
                         <outlet property="tableView" destination="7wc-hS-B2r" id="Oo6-rp-Q9e"/>
                     </connections>
@@ -364,7 +365,7 @@ Connect with Facebook</string>
                                 <rect key="frame" x="0.0" y="92" width="600" height="339"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MgC-ak-ODh" id="H2v-Zi-py0">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="339"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="338"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -378,6 +379,9 @@ Connect with Facebook</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Nearby" id="I31-zL-GPM"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isFriendsView" value="NO"/>
+                    </userDefinedRuntimeAttributes>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sR5-3F-Kwy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -404,7 +408,6 @@ Connect with Facebook</string>
         <!--Tracker-->
         <scene sceneID="b2a-yl-Ed4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lz6-px-3q9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p8S-zY-09p" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Tracker" image="Location.png" id="hpZ-89-MSf"/>
                     <toolbarItems/>
@@ -417,14 +420,15 @@ Connect with Facebook</string>
                         <segue destination="Tqt-SA-YBv" kind="relationship" relationship="rootViewController" id="guq-HF-HD2"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lz6-px-3q9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2350" y="-1125"/>
         </scene>
-        <!--Settings-->
+        <!--Profile-->
         <scene sceneID="8Mx-QU-lyc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4vd-ut-Wv5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="Settings.png" id="cDj-pI-CSq"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Settings.png" id="cDj-pI-CSq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="amk-kC-Ufa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -458,8 +462,60 @@ Connect with Facebook</string>
             </objects>
             <point key="canvasLocation" x="2350" y="-1851"/>
         </scene>
+        <!--Friends-->
+        <scene sceneID="l6Y-T6-LXs">
+            <objects>
+                <tableViewController id="RiW-tf-RPn" customClass="F4FFoodSpotsTableViewController" customModule="FoodSpots_me" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="339" sectionHeaderHeight="28" sectionFooterHeight="28" id="OPH-ty-uFA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="f99-lU-Gbp">
+                                <rect key="frame" x="0.0" y="92" width="600" height="339"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f99-lU-Gbp" id="PkT-jy-KUm">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="338"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RiW-tf-RPn" id="K9Q-37-kxc"/>
+                            <outlet property="delegate" destination="RiW-tf-RPn" id="Z8S-7b-ubJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Friends" id="o4g-NG-23a"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isFriendsView" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c7q-FQ-myh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3162" y="1010"/>
+        </scene>
+        <!--Friends-->
+        <scene sceneID="Ihb-2D-mhQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6tG-Ok-ouC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Friends" image="Facebook.png" id="XfQ-be-4gP"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5vZ-Kv-v6i">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RiW-tf-RPn" kind="relationship" relationship="rootViewController" id="aIs-jB-Xh5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yjk-F8-NUJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2357" y="1010"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Facebook.png" width="25" height="25"/>
         <image name="Location.png" width="25" height="25"/>
         <image name="Pin.png" width="25" height="25"/>
         <image name="Restaurant.png" width="25" height="25"/>

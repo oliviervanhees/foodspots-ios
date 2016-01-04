@@ -12,6 +12,8 @@ import MapKit
 class FoodSpot{
     private static var API_BASE = "/pins"
     
+    enum FoodSpotListType { case Friends, Nearby }
+    
     var foodSpotID: String
     var name: String
     var imageURL: String?
@@ -57,7 +59,7 @@ class FoodSpot{
         return FoodSpot(_foodSpotID: foodSpotID, _name: name,_imageURL: imageURL, _location: location, _distance: distance,_coordinate: coordinate)
     }
     
-    static func list(cb: ([FoodSpot]) -> Void) {
+    static func list(type: FoodSpotListType, cb: ([FoodSpot]) -> Void) {
         let c = F4FLocationManager.sharedInstance.getLastKnownLocation()
         let lat = Double(c?.latitude ?? 0)
         let lon = Double(c?.longitude ?? 0)
@@ -66,7 +68,12 @@ class FoodSpot{
             "longitude": lon
         ]
         
-        F4FNetworkController.performRequest(.GET, uri: API_BASE, parameters: parameters) { (data, code) -> Void in
+        var uri = API_BASE
+        if type == .Friends {
+            uri += "/popular"
+        }
+        
+        F4FNetworkController.performRequest(.GET, uri: uri, parameters: parameters) { (data, code) -> Void in
             let result = data.map{ return FoodSpot.fromJson($1)}
             getLikes(result)
             getFriends(result)

@@ -10,6 +10,8 @@ import UIKit
 
 class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTappedDelegate {
     
+    @IBInspectable var isFriendsView: Bool = false
+
     var foodSpots:[FoodSpot] = []
     
     override func viewDidLoad() {
@@ -21,11 +23,12 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
         tableView.backgroundColor = F4FColors.backgroundColorLight
         
         let manager = F4FDataManager.sharedInstance
-        foodSpots = manager.foodSpots
+        foodSpots = isFriendsView ? manager.foodSpotsFriends : manager.foodSpotsNearby
         
         // Subscribe to notification
+        let notification = isFriendsView ? "F4FFoodSpotsFriendsListChanged" : "F4FFoodSpotsNearbyListChanged"
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"foodSpotsChanged:", name: notification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"likesChanged:", name: "F4FFoodSpotsLikesChanged", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"foodSpotsChanged:", name: "F4FFoodSpotsChanged", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"friendsChanged:", name: "F4FFoodSpotsFriendsChanged", object: nil)
     }
     
@@ -35,12 +38,12 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
     
     // MARK: - Notifications
     
-    func likesChanged(notification: NSNotification) {
+    func foodSpotsChanged(notification: NSNotification) {
+        foodSpots = notification.object as! [FoodSpot]
         tableView.reloadData()
     }
     
-    func foodSpotsChanged(notification: NSNotification) {
-        foodSpots = notification.object as! [FoodSpot]
+    func likesChanged(notification: NSNotification) {
         tableView.reloadData()
     }
     
@@ -131,16 +134,4 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
             foodSpot.openInMaps()
         }
     }
-    
-    // MARK: - Navigation
-    /*
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if(segue.identifier == "SegueFoodSpot"){
-    let viewController = segue.destinationViewController as! F4FFoodSpotViewController
-    let selectedIndex = self.tableView.indexPathForSelectedRow!
-    viewController.title = foodSpots[selectedIndex.row]
-    }
-    }
-    */
-    
 }

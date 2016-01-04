@@ -14,7 +14,8 @@ class F4FDataManager: NSObject {
     
     static let sharedInstance = F4FDataManager()
     
-    var foodSpots:[FoodSpot] = []
+    var foodSpotsNearby:[FoodSpot] = []
+    var foodSpotsFriends:[FoodSpot] = []
     
     private override init(){
         super.init()
@@ -24,13 +25,17 @@ class F4FDataManager: NSObject {
         }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"locationUpdate:", name: "F4FLocationUpdate", object: nil)
-
     }
     
     func updateFoodSpots(){
-        FoodSpot.list() { (result) -> Void in
-            self.foodSpots = result//.filter(){ return $0.imageURL != nil }
-            NSNotificationCenter.defaultCenter().postNotificationName("F4FFoodSpotsChanged", object: self.foodSpots, userInfo: nil)
+        FoodSpot.list(.Nearby) { (result) -> Void in
+            self.foodSpotsNearby = result
+            NSNotificationCenter.defaultCenter().postNotificationName("F4FFoodSpotsNearbyListChanged", object: self.foodSpotsNearby, userInfo: nil)
+        }
+        
+        FoodSpot.list(.Friends) { (result) -> Void in
+            self.foodSpotsFriends = result
+            NSNotificationCenter.defaultCenter().postNotificationName("F4FFoodSpotsFriendsListChanged", object: self.foodSpotsFriends, userInfo: nil)
         }
     }
     

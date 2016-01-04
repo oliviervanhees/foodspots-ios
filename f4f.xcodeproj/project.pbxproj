@@ -38,6 +38,8 @@
 		96E6F3591B8F0B2B00097D5E /* F4FLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E6F3581B8F0B2B00097D5E /* F4FLocationViewController.swift */; };
 		96E6F35D1B8F4A5E00097D5E /* F4F.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96E6F35B1B8F4A5E00097D5E /* F4F.xcdatamodeld */; };
 		96E6F35F1B8F5A0700097D5E /* LocationUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E6F35E1B8F5A0700097D5E /* LocationUpdate.swift */; };
+		96F2908F1C3A5F0900FC491C /* Facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96F2908D1C3A5F0900FC491C /* Facebook@2x.png */; };
+		96F290901C3A5F0900FC491C /* Facebook@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96F2908E1C3A5F0900FC491C /* Facebook@3x.png */; };
 		96F654261C12DFD700152F2E /* F4FMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F654251C12DFD700152F2E /* F4FMapViewController.swift */; };
 		96F654281C12E50100152F2E /* F4FFoodSpotsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F654271C12E50100152F2E /* F4FFoodSpotsTableViewController.swift */; };
 		96F6542B1C12E76800152F2E /* Restaurant@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96F654291C12E76800152F2E /* Restaurant@3x.png */; };
@@ -96,6 +98,8 @@
 		96E6F3581B8F0B2B00097D5E /* F4FLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = F4FLocationViewController.swift; path = Controllers/F4FLocationViewController.swift; sourceTree = "<group>"; };
 		96E6F35C1B8F4A5E00097D5E /* F4F.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = F4F.xcdatamodel; sourceTree = "<group>"; };
 		96E6F35E1B8F5A0700097D5E /* LocationUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationUpdate.swift; path = Model/LocationUpdate.swift; sourceTree = "<group>"; };
+		96F2908D1C3A5F0900FC491C /* Facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Facebook@2x.png"; path = "Resources/Icons/Facebook@2x.png"; sourceTree = "<group>"; };
+		96F2908E1C3A5F0900FC491C /* Facebook@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Facebook@3x.png"; path = "Resources/Icons/Facebook@3x.png"; sourceTree = "<group>"; };
 		96F654251C12DFD700152F2E /* F4FMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = F4FMapViewController.swift; path = Controllers/F4FMapViewController.swift; sourceTree = "<group>"; };
 		96F654271C12E50100152F2E /* F4FFoodSpotsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = F4FFoodSpotsTableViewController.swift; path = Controllers/F4FFoodSpotsTableViewController.swift; sourceTree = "<group>"; };
 		96F654291C12E76800152F2E /* Restaurant@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Restaurant@3x.png"; path = "Resources/Icons/Restaurant@3x.png"; sourceTree = "<group>"; };
@@ -241,6 +245,8 @@
 		96E6F3451B8EF61B00097D5E /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				96F2908D1C3A5F0900FC491C /* Facebook@2x.png */,
+				96F2908E1C3A5F0900FC491C /* Facebook@3x.png */,
 				96DE2A6D1C2AC11B00D6DC04 /* Heart@3x.png */,
 				96DE2A6E1C2AC11B00D6DC04 /* Heart_filled@3x.png */,
 				96DE2A6F1C2AC11B00D6DC04 /* Heart_filled@2x.png */,
@@ -373,8 +379,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96F290901C3A5F0900FC491C /* Facebook@3x.png in Resources */,
 				96DE2A6C1C2AA84400D6DC04 /* Car@3x.png in Resources */,
 				96E6F3521B8EF87E00097D5E /* Location@3x.png in Resources */,
+				96F2908F1C3A5F0900FC491C /* Facebook@2x.png in Resources */,
 				96DE2A711C2AC11B00D6DC04 /* Heart@3x.png in Resources */,
 				96DE2A681C2AA1A900D6DC04 /* knife_fork.png in Resources */,
 				96BBABD61B8E1DE600568D97 /* Main.storyboard in Resources */,

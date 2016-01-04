@@ -19,7 +19,7 @@ class F4FMapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
 
         let manager = F4FDataManager.sharedInstance
-        foodSpots = manager.foodSpots
+        foodSpots = manager.foodSpotsNearby
         
         mapView.delegate = self
         
