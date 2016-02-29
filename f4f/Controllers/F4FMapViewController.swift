@@ -53,6 +53,13 @@ class F4FMapViewController: UIViewController, MKMapViewDelegate {
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        // Return nil for the user location to show the blue dot
+        if(annotation.isKindOfClass(MKUserLocation.classForCoder())){
+            return nil
+        }
+        
+        // Else show our custom pin
         var view = mapView.dequeueReusableAnnotationViewWithIdentifier("test")
         if view == nil {
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "test")
@@ -64,7 +71,7 @@ class F4FMapViewController: UIViewController, MKMapViewDelegate {
             routeButton.backgroundColor = F4FColors.blueColor
             routeButton.setImage(UIImage(named: "Car")?.imageWithRenderingMode(.AlwaysTemplate), forState: .Normal)
             routeButton.tintColor = UIColor.whiteColor()
-    
+            
             view?.leftCalloutAccessoryView = routeButton
         } else {
             view?.annotation = annotation
