@@ -24,7 +24,7 @@ class F4FDataManager: NSObject {
             updateFoodSpots()
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"locationUpdate:", name: "F4FLocationUpdate", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(F4FDataManager.locationUpdate(_:)), name: "F4FLocationUpdate", object: nil)
     }
     
     func updateFoodSpots(){

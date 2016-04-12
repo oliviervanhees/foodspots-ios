@@ -128,7 +128,8 @@ class F4FLocationManager: NSObject, CLLocationManagerDelegate{
                 let fetchedResults = try moc.executeFetchRequest(fetchRequest) as? [NSManagedObject]
                 let results = fetchedResults as! [LocationUpdate]
                 
-                for var i = 0; i < results.count - maxNumberLocationUpdates; i++ {
+                let nrDelete = max(results.count - maxNumberLocationUpdates, 0);
+                for i in 0 ..< nrDelete {
                     let objectToDelete = results[i]
                     moc.deleteObject(objectToDelete)
                 }

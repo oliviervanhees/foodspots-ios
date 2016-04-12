@@ -25,7 +25,7 @@ class F4FMapViewController: UIViewController, MKMapViewDelegate {
         
         initMapView()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"foodSpotsChanged:", name: "F4FFoodSpotsChanged", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(F4FMapViewController.foodSpotsChanged(_:)), name: "F4FFoodSpotsChanged", object: nil)
     }
     
     deinit {

@@ -27,9 +27,9 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
         
         // Subscribe to notification
         let notification = isFriendsView ? "F4FFoodSpotsFriendsListChanged" : "F4FFoodSpotsNearbyListChanged"
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"foodSpotsChanged:", name: notification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"likesChanged:", name: "F4FFoodSpotsLikesChanged", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"friendsChanged:", name: "F4FFoodSpotsFriendsChanged", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(F4FFoodSpotsTableViewController.foodSpotsChanged(_:)), name: notification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(F4FFoodSpotsTableViewController.likesChanged(_:)), name: "F4FFoodSpotsLikesChanged", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(F4FFoodSpotsTableViewController.friendsChanged(_:)), name: "F4FFoodSpotsFriendsChanged", object: nil)
     }
     
     deinit {
@@ -84,7 +84,7 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
         }
 
         let imageViews = [cell.friendImage1!, cell.friendImage2!, cell.friendImage3!]
-        for(var i = 0; i < 3; i++){
+        for i in 0 ..< 3 {
             let imageView = imageViews[i]
             if(foodSpot.friends.count > i){
                 foodSpot.imageFriend(i){ image -> Void in
