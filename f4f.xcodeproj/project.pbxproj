@@ -19,6 +19,7 @@
 		96BBABD81B8E1DE600568D97 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96BBABD71B8E1DE600568D97 /* Images.xcassets */; };
 		96BBABDB1B8E1DE600568D97 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96BBABD91B8E1DE600568D97 /* LaunchScreen.xib */; };
 		96BBABE71B8E1DE600568D97 /* f4fTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BBABE61B8E1DE600568D97 /* f4fTests.swift */; };
+		96BD75FB1CBCF733004FDC0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96BD75FA1CBCF733004FDC0C /* GoogleService-Info.plist */; };
 		96DE2A5E1C255AB700D6DC04 /* knife_fork.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96DE2A5D1C255AB700D6DC04 /* knife_fork.jpg */; };
 		96DE2A601C28904F00D6DC04 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96DE2A5F1C28904F00D6DC04 /* bg.jpg */; };
 		96DE2A681C2AA1A900D6DC04 /* knife_fork.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DE2A671C2AA1A900D6DC04 /* knife_fork.png */; };
@@ -79,6 +80,8 @@
 		96BBABE01B8E1DE600568D97 /* f4fTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = f4fTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BBABE51B8E1DE600568D97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96BBABE61B8E1DE600568D97 /* f4fTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = f4fTests.swift; sourceTree = "<group>"; };
+		96BD75FA1CBCF733004FDC0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		96BD75FC1CBCF7EC004FDC0C /* f4f-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "f4f-Bridging-Header.h"; sourceTree = "<group>"; };
 		96DE2A5D1C255AB700D6DC04 /* knife_fork.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = knife_fork.jpg; path = Resources/Images/knife_fork.jpg; sourceTree = "<group>"; };
 		96DE2A5F1C28904F00D6DC04 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg.jpg; path = Resources/Images/bg.jpg; sourceTree = "<group>"; };
 		96DE2A671C2AA1A900D6DC04 /* knife_fork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = knife_fork.png; path = Resources/Images/knife_fork.png; sourceTree = "<group>"; };
@@ -180,6 +183,7 @@
 				96E6F3441B8EF61200097D5E /* Resources */,
 				96BBABCE1B8E1DE600568D97 /* Supporting Files */,
 				965C74111C21807B00C73DDA /* Location.gpx */,
+				96BD75FC1CBCF7EC004FDC0C /* f4f-Bridging-Header.h */,
 			);
 			path = f4f;
 			sourceTree = "<group>";
@@ -187,6 +191,7 @@
 		96BBABCE1B8E1DE600568D97 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				96BD75FA1CBCF733004FDC0C /* GoogleService-Info.plist */,
 				96BBABCF1B8E1DE600568D97 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -396,6 +401,7 @@
 				96E6F3561B8EFCA400097D5E /* Settings@3x.png in Resources */,
 				96DE2A5E1C255AB700D6DC04 /* knife_fork.jpg in Resources */,
 				96E6F3571B8EFCA400097D5E /* Settings@2x.png in Resources */,
+				96BD75FB1CBCF733004FDC0C /* GoogleService-Info.plist in Resources */,
 				96F6542B1C12E76800152F2E /* Restaurant@3x.png in Resources */,
 				96DE2A6B1C2AA84400D6DC04 /* Car@2x.png in Resources */,
 				96DE2A741C2AC11B00D6DC04 /* Heart@2x.png in Resources */,
@@ -618,6 +624,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.friends4food.tracker;
 				PRODUCT_NAME = FoodSpots.me;
+				SWIFT_OBJC_BRIDGING_HEADER = "f4f/f4f-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -631,6 +638,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.friends4food.tracker;
 				PRODUCT_NAME = FoodSpots.me;
+				SWIFT_OBJC_BRIDGING_HEADER = "f4f/f4f-Bridging-Header.h";
 			};
 			name = Release;
 		};

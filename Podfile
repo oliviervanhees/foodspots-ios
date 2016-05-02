@@ -11,3 +11,5 @@ pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'FBSDKShareKit'
 
+# Google
+pod 'Google/Analytics'

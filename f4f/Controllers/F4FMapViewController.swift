@@ -32,6 +32,16 @@ class F4FMapViewController: UIViewController, MKMapViewDelegate {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        let tracker = GAI.sharedInstance().defaultTracker
+        tracker.set(kGAIScreenName, value: "Map screen")
+        
+        let builder = GAIDictionaryBuilder.createScreenView()
+        tracker.send(builder.build() as [NSObject : AnyObject])
+    }
+    
     // MARK: - Notifications
     
     func foodSpotsChanged(notification: NSNotification) {

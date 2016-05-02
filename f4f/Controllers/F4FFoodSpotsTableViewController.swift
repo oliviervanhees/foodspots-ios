@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTappedDelegate {
     
     @IBInspectable var isFriendsView: Bool = false
@@ -34,6 +35,16 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        let tracker = GAI.sharedInstance().defaultTracker
+        tracker.set(kGAIScreenName, value: "Main screen")
+        
+        let builder = GAIDictionaryBuilder.createScreenView()
+        tracker.send(builder.build() as [NSObject : AnyObject])
     }
     
     // MARK: - Notifications
@@ -116,6 +127,10 @@ class F4FFoodSpotsTableViewController: UITableViewController, FoodSpotCellLikeTa
             if(foodSpot.liked){
 
             }else{
+                // GA
+                let tracker = GAI.sharedInstance().defaultTracker
+                tracker.send(GAIDictionaryBuilder.createEventWithCategory("FoodSpots", action: "Liked", label: foodSpot.name, value: nil).build() as [NSObject : AnyObject])
+
                 foodSpot.setLiked(!foodSpot.liked){ success in
                     if success {
                         foodSpot.liked = !foodSpot.liked
